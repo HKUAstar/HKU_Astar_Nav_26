@@ -1,0 +1,2830 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      The system is: Linux - 5.15.0-139-generic - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/"
+    found: "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/4.2.1/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:6 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/opt/ros/noetic/bin/tapi"
+      - "/home/linuxbrew/.linuxbrew/bin/tapi"
+      - "/home/linuxbrew/.linuxbrew/sbin/tapi"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/tapi"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/tapi"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/tapi"
+      - "/home/sentry_train_test/.local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/games/tapi"
+      - "/usr/local/games/tapi"
+      - "/snap/bin/tapi"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/tapi"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/"
+    found: "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/4.2.1/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1"
+      binary: "/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1'
+        
+        Run Build Command(s): /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3cf39/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3cf39.dir/build.make CMakeFiles/cmTC_3cf39.dir/build
+        make[1]: Entering directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1'
+        Building C object CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -c /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc0HZa7G.s
+        GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/9/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o /tmp/cc0HZa7G.s
+        GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        Linking C executable cmTC_3cf39
+        /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cf39.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3cf39' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccr3GFIa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3cf39 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 9.4.0
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccr3GFIa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3cf39 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.34
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3cf39' '-mtune=generic' '-march=x86-64'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -o cmTC_3cf39
+        make[1]: Leaving directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3cf39/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_3cf39.dir/build.make CMakeFiles/cmTC_3cf39.dir/build]
+        ignore line: [make[1]: Entering directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-c0gFP1']
+        ignore line: [Building C object CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -c /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc0HZa7G.s]
+        ignore line: [GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o /tmp/cc0HZa7G.s]
+        ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking C executable cmTC_3cf39]
+        ignore line: [/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cf39.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3cf39' '-mtune=generic' '-march=x86-64']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccr3GFIa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3cf39 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccr3GFIa.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_3cf39] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 9.4.0]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccr3GFIa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3cf39 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_3cf39.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.34
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ"
+      binary: "/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ'
+        
+        Run Build Command(s): /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bcf61/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_bcf61.dir/build.make CMakeFiles/cmTC_bcf61.dir/build
+        make[1]: Entering directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ'
+        Building CXX object CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -c /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbnvi11.s
+        GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/9"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/9
+         /usr/include/x86_64-linux-gnu/c++/9
+         /usr/include/c++/9/backward
+         /usr/lib/gcc/x86_64-linux-gnu/9/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 3d1eba838554fa2348dba760e4770469
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbnvi11.s
+        GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_bcf61
+        /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcf61.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bcf61' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZsE9s.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bcf61 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 9.4.0
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZsE9s.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bcf61 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.34
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bcf61' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bcf61
+        make[1]: Leaving directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/9]
+          add: [/usr/include/x86_64-linux-gnu/c++/9]
+          add: [/usr/include/c++/9/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/9] ==> [/usr/include/c++/9]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/9] ==> [/usr/include/x86_64-linux-gnu/c++/9]
+        collapse include dir [/usr/include/c++/9/backward] ==> [/usr/include/c++/9/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/9;/usr/include/x86_64-linux-gnu/c++/9;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bcf61/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_bcf61.dir/build.make CMakeFiles/cmTC_bcf61.dir/build]
+        ignore line: [make[1]: Entering directory '/home/sentry_train_test/AstarTraining/ws_livox/build/CMakeFiles/CMakeScratch/TryCompile-o6R8VZ']
+        ignore line: [Building CXX object CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -c /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbnvi11.s]
+        ignore line: [GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/9"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/9]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/9]
+        ignore line: [ /usr/include/c++/9/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 3d1eba838554fa2348dba760e4770469]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbnvi11.s]
+        ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_bcf61]
+        ignore line: [/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcf61.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bcf61' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZsE9s.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bcf61 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccqZsE9s.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_bcf61] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 9.4.0]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZsE9s.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bcf61 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. -v CMakeFiles/cmTC_bcf61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.34
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/catkin/cmake/tools/doxygen.cmake:34 (find_program)"
+      - "/opt/ros/noetic/share/catkin/cmake/all.cmake:164 (include)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:20 (include)"
+      - "CMakeLists.txt:58 (find_package)"
+    mode: "program"
+    variable: "DOXYGEN_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "doxygen"
+    candidate_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/bin/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/sbin/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/bin/"
+      - "/opt/ros/noetic/sbin/"
+      - "/opt/ros/noetic/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/bin/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/sbin/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/bin/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/sbin/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/bin/doxygen"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/sbin/doxygen"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/doxygen"
+      - "/opt/ros/noetic/bin/doxygen"
+      - "/opt/ros/noetic/sbin/doxygen"
+      - "/opt/ros/noetic/doxygen"
+      - "/opt/ros/noetic/bin/doxygen"
+      - "/home/linuxbrew/.linuxbrew/bin/doxygen"
+      - "/home/linuxbrew/.linuxbrew/sbin/doxygen"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/doxygen"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/doxygen"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/doxygen"
+      - "/home/sentry_train_test/.local/bin/doxygen"
+      - "/usr/local/sbin/doxygen"
+      - "/usr/local/bin/doxygen"
+      - "/usr/sbin/doxygen"
+    found: "/usr/bin/doxygen"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "roscpp"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libroscpp.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:173 (find_library)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pthread"
+    candidate_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/lib/x86_64-linux-gnu/"
+      - "/opt/ros/noetic/lib/"
+      - "/opt/ros/noetic/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/x86_64-linux-gnu/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/x86_64-linux-gnu/"
+      - "/lib/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/lib/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/"
+      - "/usr/X11R6/lib/x86_64-linux-gnu/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/x86_64-linux-gnu/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/x86_64-linux-gnu/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/lib/x86_64-linux-gnu/"
+      - "/opt/ros/noetic/lib/"
+      - "/opt/ros/noetic/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+    found: "/usr/lib/x86_64-linux-gnu/libpthread.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/cpp_common/cmake/cpp_commonConfig.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cpp_common"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libcpp_common.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/message_runtime/cmake/message_runtimeConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "roscpp_serialization"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libroscpp_serialization.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rostime/cmake/rostimeConfig.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake:197 (find_package)"
+      - "/opt/ros/noetic/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake:197 (find_package)"
+      - "/opt/ros/noetic/share/message_runtime/cmake/message_runtimeConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rostime"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librostime.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rosconsole/cmake/rosconsoleConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rosconsole"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librosconsole.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rosconsole/cmake/rosconsoleConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rosconsole_log4cxx"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librosconsole_log4cxx.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rosconsole/cmake/rosconsoleConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rosconsole_backend_interface"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librosconsole_backend_interface.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "xmlrpcpp"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libxmlrpcpp.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rosbag"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librosbag.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rosbag_storage"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librosbag_storage.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/class_loader/cmake/class_loaderConfig.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/pluginlib/cmake/pluginlibConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "class_loader"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libclass_loader.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/class_loader/cmake/class_loaderConfig.cmake:171 (find_library)"
+      - "/opt/ros/noetic/share/pluginlib/cmake/pluginlibConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dl"
+    candidate_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/lib/x86_64-linux-gnu/"
+      - "/opt/ros/noetic/lib/"
+      - "/opt/ros/noetic/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/x86_64-linux-gnu/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/x86_64-linux-gnu/"
+      - "/lib/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/lib/"
+      - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/install/"
+      - "/usr/X11R6/lib/x86_64-linux-gnu/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/x86_64-linux-gnu/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/x86_64-linux-gnu/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/x86_64-linux-gnu/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/lib/"
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/lib/x86_64-linux-gnu/"
+      - "/opt/ros/noetic/lib/"
+      - "/opt/ros/noetic/"
+      - "/opt/ros/noetic/bin/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli/"
+      - "/home/sentry_train_test/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+    found: "/usr/lib/x86_64-linux-gnu/libdl.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/roslib/cmake/roslibConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/pluginlib/cmake/pluginlibConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "roslib"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libroslib.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/rospack/cmake/rospackConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/roslib/cmake/roslibConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/pluginlib/cmake/pluginlibConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rospack"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/librospack.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/roslz4/cmake/roslz4Config.cmake:158 (find_library)"
+      - "/opt/ros/noetic/share/rosbag_storage/cmake/rosbag_storageConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "roslz4"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libroslz4.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/topic_tools/cmake/topic_toolsConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/rosbag/cmake/rosbagConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "topic_tools"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libtopic_tools.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pcl_ros_filter"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libpcl_ros_filter.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pcl_ros_tf"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libpcl_ros_tf.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/dynamic_reconfigure/cmake/dynamic_reconfigureConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dynamic_reconfigure_config_init_mutex"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/message_filters/cmake/message_filtersConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "message_filters"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libmessage_filters.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/nodelet/cmake/nodeletConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nodeletlib"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libnodeletlib.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/bondcpp/cmake/bondcppConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/nodelet/cmake/nodeletConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "bondcpp"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libbondcpp.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/tf/cmake/tfConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tf"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libtf.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/tf2_ros/cmake/tf2_rosConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/tf/cmake/tfConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tf2_ros"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libtf2_ros.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/actionlib/cmake/actionlibConfig.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/tf2_ros/cmake/tf2_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/tf/cmake/tfConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "actionlib"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libactionlib.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/tf2/cmake/tf2Config.cmake:160 (find_library)"
+      - "/opt/ros/noetic/share/tf2_ros/cmake/tf2_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/tf/cmake/tfConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/pcl_ros/cmake/pcl_rosConfig.cmake:199 (find_package)"
+      - "/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)"
+      - "livox_ros_driver2/CMakeLists.txt:33 (find_package)"
+    mode: "library"
+    variable: "lib"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tf2"
+    candidate_directories:
+      - "/opt/ros/noetic/lib/"
+    found: "/opt/ros/noetic/lib/libtf2.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/genmsg/cmake/genmsg-extras.cmake:268 (find_file)"
+      - "livox_ros_driver2/CMakeLists.txt:55 (generate_messages)"
+    mode: "file"
+    variable: "_dep_msg_paths_file"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "share/livox_ros_driver2/cmake/livox_ros_driver2-msg-paths.cmake"
+    candidate_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/"
+    found: "/home/sentry_train_test/AstarTraining/ws_livox/devel/share/livox_ros_driver2/cmake/livox_ros_driver2-msg-paths.cmake"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/ros/noetic/share/genmsg/cmake/genmsg-extras.cmake:268 (find_file)"
+      - "livox_ros_driver2/CMakeLists.txt:55 (generate_messages)"
+    mode: "file"
+    variable: "_dep_msg_paths_file"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "share/std_msgs/cmake/std_msgs-msg-paths.cmake"
+    candidate_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/"
+      - "/opt/ros/noetic/"
+    searched_directories:
+      - "/home/sentry_train_test/AstarTraining/ws_livox/devel/share/std_msgs/cmake/std_msgs-msg-paths.cmake"
+    found: "/opt/ros/noetic/share/std_msgs/cmake/std_msgs-msg-paths.cmake"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/sentry_train_test/AstarTraining/ws_livox/devel"
+        - "/opt/ros/noetic"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/noetic"
+      ENV{PATH}:
+        - "/opt/ros/noetic/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/sentry_train_test/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/home/sentry_train_test/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli"
+        - "/home/sentry_train_test/.local/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/sentry_train_test/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/sentry_train_test/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/home/sentry_train_test/AstarTraining/ws_livox/install"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/sentry_train_test/.local/lib/python3.8/site-packages/cmake/data"
+        - "/home/sentry_train_test/AstarTraining/ws_livox/install"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...

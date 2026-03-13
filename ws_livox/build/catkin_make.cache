@@ -1,0 +1,2 @@
+livox_ros_driver2
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCATKIN_DEVEL_PREFIX=/home/sentry_train_test/AstarTraining/ws_livox/devel -DCMAKE_INSTALL_PREFIX=/home/sentry_train_test/AstarTraining/ws_livox/install -G Unix Makefiles
