@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- ======================== 运行模式参数 ======================== -->
+  <arg name="use_sim_time"  default="false" />
+  <arg name="start_rviz"    default="true" />
+  <arg name="play_bag"      default="false" />
+  <arg name="bag_file"      default="" />
+  <arg name="bag_rate"      default="1.0" />
+
+  <!-- ======================== 传感器与坐标系 ======================== -->
+  <arg name="points_topic"          default="/livox/lidar" />
+  <arg name="imu_topic"             default="/livox/imu_filtered" />
+  <arg name="livox_frame_id"        default="gimbal_frame" />
+
+  <!-- ======================== IMU 融合开关 ======================== -->
+  <arg name="enable_imu"            default="true" />
+
+  <!-- ======================== 地图保存参数 ======================== -->
+  <arg name="save_map"              default="true" />
+  <arg name="map_save_path"         default="$(find hdl_graph_slam)/map/mapping_result.pcd" />
+  <arg name="map_resolution"        default="0.05" />
+  <arg name="map_utm"               default="false" />
+  <arg name="map_save_interval"     default="10.0" />
+
+  <param name="use_sim_time" value="$(arg use_sim_time)" />
+
+  <!-- ======================== Livox MID360 驱动 ======================== -->
+  <include file="$(find livox_ros_driver2)/launch_ROS1/rviz_MID360.launch" unless="$(arg play_bag)">
+    <arg name="msg_frame_id" value="$(arg livox_frame_id)" />
+  </include>
+
+  <!-- ======================== IMU 滤波 ======================== -->
+  <!-- 订阅 /livox/imu 原始数据，发布 /livox/imu_filtered 去除重力/噪声 -->
+  <include file="$(find bot_sim)/launch_real/imu_filter.launch" if="$(arg enable_imu)" />
+
+  <!-- ======================== HDL Graph SLAM + IMU 建图核心 ======================== -->
+  <!-- 带 IMU 融合版本 (msf_updates 前端 + IMU去畸变 + IMU约束) -->
+  <include file="$(find hdl_graph_slam)/launch/hdl_graph_slam_imu.launch" if="$(arg enable_imu)">
+    <arg name="points_topic"  value="$(arg points_topic)" />
+    <arg name="imu_topic"     value="$(arg imu_topic)" />
+  </include>
+
+  <!-- 不带 IMU 的纯激光版本 -->
+  <include file="$(find hdl_graph_slam)/launch/hdl_graph_slam.launch" unless="$(arg enable_imu)">
+    <arg name="points_topic"  value="$(arg points_topic)" />
+  </include>
+
+  <!-- ======================== 自动保存地图 (PCD) ======================== -->
+  <node pkg="hdl_graph_slam" type="save_map_on_update.py" name="auto_save_map"
+        output="screen" if="$(arg save_map)">
+    <param name="destination"    value="$(arg map_save_path)" />
+    <param name="resolution"     value="$(arg map_resolution)" />
+    <param name="utm"            value="$(arg map_utm)" />
+    <param name="trigger_topic"  value="/hdl_graph_slam/map_points" />
+    <param name="min_interval"   value="$(arg map_save_interval)" />
+  </node>
+
+  <!-- ======================== 回放 rosbag (可选) ======================== -->
+  <node pkg="rosbag" type="play" name="bag_player" output="screen"
+        if="$(arg play_bag)"
+        args="--clock -r $(arg bag_rate) $(arg bag_file)" />
+
+  <!-- ======================== RViz 可视化 (可选) ======================== -->
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"
+        if="$(arg start_rviz)"
+        args="-d $(find hdl_graph_slam)/rviz/hdl_graph_slam.rviz" />
+</launch>
