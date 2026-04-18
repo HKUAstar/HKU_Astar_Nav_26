@@ -15,6 +15,12 @@ logs/
 livox_ws/
 ws_livox/
 
+# Large data files
+sim_nav/src/hdl_graph_slam/map/
+sim_nav/src/Point-LIO/PCD/
+sim_nav/src/Point-LIO/image/
+ws_livox/
+
 # Standardization directory
 standardization/
 standarlization/
