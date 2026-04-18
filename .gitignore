@@ -1,4 +1,10 @@
 
+# Build and development directories
+build/
+devel/
+*/build/
+*/devel/
+
 # Logs and recordings
 logs/
 *.log
