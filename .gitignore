@@ -12,7 +12,6 @@ logs/
 *.bag.active
 
 # External dependencies (from GitHub)
-livox_ws/
 ws_livox/
 
 # Large data files
