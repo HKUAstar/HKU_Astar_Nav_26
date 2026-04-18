@@ -1,0 +1,57 @@
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _decision_generate_messages_check_deps_Armor
+[  0%] Built target _decision_generate_messages_check_deps_NavGoal
+[  0%] Built target _decision_generate_messages_check_deps_Armors
+[  0%] Built target _decision_generate_messages_check_deps_NavActionResult
+[  0%] Built target _decision_generate_messages_check_deps_NavFeedback
+[  0%] Built target _decision_generate_messages_check_deps_GameStats
+[  0%] Built target _decision_generate_messages_check_deps_NavActionFeedback
+[  0%] Built target _decision_generate_messages_check_deps_NavResult
+[  0%] Built target _decision_generate_messages_check_deps_Angles
+[  0%] Built target _decision_generate_messages_check_deps_Target
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _decision_generate_messages_check_deps_TargetCommand
+[  0%] Built target _decision_generate_messages_check_deps_NavAction
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target _decision_generate_messages_check_deps_NavActionGoal
+[ 18%] Built target decision_generate_messages_cpp
+[ 38%] Built target decision_generate_messages_py
+[ 56%] Built target decision_generate_messages_lisp
+[ 92%] Built target decision_generate_messages_nodejs
+[ 94%] Built target decision_generate_messages_eus
+[35m[1mScanning dependencies of target decision_node[0m
+[ 94%] Built target decision_generate_messages
+[ 97%] Built target serial_test_receive_node
+[ 98%] [32mBuilding CXX object CMakeFiles/decision_node.dir/src/decision_node.cpp.o[0m
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  148 |             printf("patrol_path_list[[01;35m[K%d[m[K][%d] = %f\n", [32m[Ki[m[K, j, patrol_path_list[i][j]);
+      |                                      [01;35m[K~^[m[K               [32m[K~[m[K
+      |                                       [01;35m[K|[m[K               [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K             [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                      [32m[K%ld[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:43:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  148 |             printf("patrol_path_list[%d][[01;35m[K%d[m[K] = %f\n", i, [32m[Kj[m[K, patrol_path_list[i][j]);
+      |                                          [01;35m[K~^[m[K              [32m[K~[m[K
+      |                                           [01;35m[K|[m[K              [32m[K|[m[K
+      |                                           [01;35m[Kint[m[K            [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                          [32m[K%ld[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:49:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 4 has type ‘[01m[KXmlRpc::XmlRpcValue[m[K’ [[01;35m[K-Wformat=[m[K]
+  148 |             printf("patrol_path_list[%d][%d] = [01;35m[K%f[m[K\n", i, j, patrol_path_list[i][j]);
+      |                                                [01;35m[K~^[m[K
+      |                                                 [01;35m[K|[m[K
+      |                                                 [01;35m[Kdouble[m[K
+[100%] [32m[1mLinking CXX executable /home/sentry_train_test/AstarTraining/sim_nav/devel/.private/decision/lib/decision/decision_node[0m
+[100%] Built target decision_node

@@ -1,0 +1,51 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target _decision_generate_messages_check_deps_NavActionResult
+[  0%] Built target _decision_generate_messages_check_deps_NavActionFeedback
+[  0%] Built target _decision_generate_messages_check_deps_Angles
+[  0%] Built target _decision_generate_messages_check_deps_NavFeedback
+[  0%] Built target _decision_generate_messages_check_deps_Armor
+[  0%] Built target _decision_generate_messages_check_deps_NavGoal
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _decision_generate_messages_check_deps_Target
+[  0%] Built target _decision_generate_messages_check_deps_GameStats
+[  0%] Built target _decision_generate_messages_check_deps_NavResult
+[  0%] Built target _decision_generate_messages_check_deps_NavActionGoal
+[  0%] Built target _decision_generate_messages_check_deps_Armors
+[  0%] Built target _decision_generate_messages_check_deps_NavAction
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target _decision_generate_messages_check_deps_TargetCommand
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_py
+[ 18%] Built target decision_generate_messages_nodejs
+[ 36%] Built target decision_generate_messages_cpp
+[ 56%] Built target decision_generate_messages_eus
+[ 74%] Built target decision_generate_messages_lisp
+[ 94%] Built target decision_generate_messages_py
+[35m[1mScanning dependencies of target serial_test_receive_node[0m
+[ 95%] [32mBuilding CXX object CMakeFiles/decision_node.dir/src/decision_node.cpp.o[0m
+[ 97%] [32mBuilding CXX object CMakeFiles/serial_test_receive_node.dir/src/serial_test_receive.cpp.o[0m
+[ 97%] Built target decision_generate_messages
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/serial_test_receive.cpp:11:10:[m[K [01;31m[Kfatal error: [m[Kbot_sim/Angles.h: No such file or directory
+   11 | #include [01;31m[K"bot_sim/Angles.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/serial_test_receive_node.dir/build.make:63: CMakeFiles/serial_test_receive_node.dir/src/serial_test_receive.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/serial_test_receive_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Kbot_sim/NavActionAction.h: No such file or directory
+    7 | #include [01;31m[K"bot_sim/NavActionAction.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/decision_node.dir/build.make:63: CMakeFiles/decision_node.dir/src/decision_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:224: CMakeFiles/decision_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

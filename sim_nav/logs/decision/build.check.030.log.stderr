@@ -1,0 +1,10 @@
+[31m[1mCMake Error[0m at /home/sentry_train_test/AstarTraining/sim_nav/devel/share/bot_sim/cmake/bot_simConfig.cmake:173 (message):
+  Project 'decision' tried to find library 'bot_sim'.  The library is neither
+  a target nor built/installed properly.  Did you compile project 'bot_sim'?
+  Did you find_package() it before the subdirectory containing its code is
+  included?
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:22 (find_package)
+
+
+make: *** [Makefile:1164: cmake_check_build_system] Error 1

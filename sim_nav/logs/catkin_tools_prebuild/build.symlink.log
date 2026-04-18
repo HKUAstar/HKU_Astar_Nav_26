@@ -1,0 +1,12 @@
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./env.sh
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./_setup_util.py
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./setup.bash
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./local_setup.bash
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./setup.sh
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./setup.zsh
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./local_setup.sh
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./cmake.lock
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/./local_setup.zsh
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/sentry_train_test/AstarTraining/sim_nav/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

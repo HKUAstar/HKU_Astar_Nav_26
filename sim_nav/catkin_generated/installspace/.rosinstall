@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sentry_train_test/AstarTraining/sim_nav/install/setup.sh

@@ -1,0 +1,8 @@
+prefix=/home/sentry_train_test/AstarTraining/sim_nav/install
+
+Name: pcd2pgm
+Description: Description of pcd2pgm
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

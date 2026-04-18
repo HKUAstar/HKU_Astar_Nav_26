@@ -1,0 +1,7 @@
+Current CPU archtecture: x86_64
+Processer number:  16
+core for MP:  3
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+** WARNING ** io features related to libusb-1.0 will be disabled
+Eigen:/usr/include/eigen3

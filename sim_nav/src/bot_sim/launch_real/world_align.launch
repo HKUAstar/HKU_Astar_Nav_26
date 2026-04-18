@@ -1,0 +1,23 @@
+<launch>
+    <!-- world_align_node: 将导航map系位置转换到目标world系 -->
+    <node name="world_align_node" pkg="bot_sim" type="world_align_node" output="screen">
+        <param name="input_topic" type="string" value="/sentinel_nav_position" />
+        <param name="output_topic" type="string" value="/sentinel_world_position" />
+        <param name="target_world_frame" type="string" value="world" />
+        <param name="source_map_frame" type="string" value="map" />
+        <param name="publish_world_to_map_tf" type="bool" value="false" />
+
+        <!-- true: 用参考点自动求解 map->world；false: 用 theta/shift 手动参数 -->
+        <param name="use_ref_points" type="bool" value="true" />
+
+        <!-- 方案A：手动参数（use_ref_points=false 时生效） -->
+        <param name="theta" type="double" value="0.0" />
+        <param name="shift_x" type="double" value="0.0" />
+        <param name="shift_y" type="double" value="0.0" />
+
+        <!-- 方案B：参考点自动解算（至少2组，推荐3组以上且分散） -->
+        <!-- map_ref_points: 导航map中的点；world_ref_points: 你期望世界坐标中的对应点 -->
+        <rosparam param="map_ref_points">[[8.15, 4.77], [8.13, 17.10], [1.57, 7.50]]</rosparam>
+        <rosparam param="world_ref_points">[[8.15, 4.77], [8.13, 17.10], [1.57, 7.50]]</rosparam>
+    </node>
+</launch>

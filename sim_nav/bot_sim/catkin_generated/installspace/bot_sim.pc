@@ -1,0 +1,8 @@
+prefix=/home/sentry_train_test/AstarTraining/sim_nav/install
+
+Name: bot_sim
+Description: Description of bot_sim
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs serial message_runtime dynamic_reconfigure angles
