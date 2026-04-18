@@ -1,8 +1,3 @@
-# Build and development directories
-build/
-devel/
-*/build/
-*/devel/
 
 # Logs and recordings
 logs/
@@ -12,6 +7,7 @@ logs/
 
 # External dependencies (from GitHub)
 livox_ws/
+ws_livox/
 
 # Standardization directory
 standardization/
@@ -35,9 +31,6 @@ __pycache__/
 .catkin_workspace
 .rosinstall
 .ros/
-
-# Standardization directory
-standardization/
 
 # OS files
 .DS_Store
