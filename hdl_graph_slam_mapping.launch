@@ -27,7 +27,7 @@
   <!-- ======================== Livox MID360 驱动 ======================== -->
   <include file="$(find livox_ros_driver2)/launch_ROS1/rviz_MID360.launch" unless="$(arg play_bag)">
     <arg name="msg_frame_id" value="$(arg livox_frame_id)" />
-  </include>
+  </include> 
 
   <!-- ======================== IMU 滤波 ======================== -->
   <!-- 订阅 /livox/imu 原始数据，发布 /livox/imu_filtered 去除重力/噪声 -->
@@ -55,13 +55,13 @@
     <param name="min_interval"   value="$(arg map_save_interval)" />
   </node>
 
-  <!-- ======================== 回放 rosbag (可选) ======================== -->
+  <!-- 回放 rosbag (可选, 临时禁用) -->
   <node pkg="rosbag" type="play" name="bag_player" output="screen"
-        if="$(arg play_bag)"
+        if="false"
         args="--clock -r $(arg bag_rate) $(arg bag_file)" />
 
-  <!-- ======================== RViz 可视化 (可选) ======================== -->
+  <!-- RViz 可视化 (可选, 临时禁用) -->
   <node pkg="rviz" type="rviz" name="rviz" output="screen"
-        if="$(arg start_rviz)"
+        if="false"
         args="-d $(find hdl_graph_slam)/rviz/hdl_graph_slam.rviz" />
 </launch>
