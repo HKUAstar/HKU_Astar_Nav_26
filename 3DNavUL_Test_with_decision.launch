@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!--
+    Combined launcher:
+    1) 3D navigation pipeline
+    2) MCU communicator
+    3) Strategy decision node
+  -->
+
+  <!-- Keep these as args so the paths can be overridden when needed -->
+  <arg name="nav_launch" default="/home/sentry/AstarTraining/Old_nav/3DNavUL_Test.launch"/>
+  <arg name="mcu_launch" default="/home/sentry/AstarTraining/DecisionNode/src/decision_node/launch/mcu_communicator.launch"/>
+  <arg name="strategy_launch" default="/home/sentry/AstarTraining/DecisionNode/src/decision_node/launch/strategy_decision_tmp.launch"/>
+
+  <!-- Forwarded args for mcu_communicator.launch -->
+  <arg name="serial_port" default="/dev/ttyUSB0"/>
+  <arg name="baudrate" default="921600"/>
+  <arg name="nav_frequency" default="50"/>
+  <arg name="mcu_output" default="screen"/>
+
+  <!-- Include original 3D navigation stack -->
+  <include file="$(arg nav_launch)"/>
+
+  <!-- Include MCU communication node with configurable args -->
+  <include file="$(arg mcu_launch)">
+    <arg name="serial_port" value="$(arg serial_port)"/>
+    <arg name="baudrate" value="$(arg baudrate)"/>
+    <arg name="nav_frequency" value="$(arg nav_frequency)"/>
+    <arg name="output" value="$(arg mcu_output)"/>
+  </include>
+
+  <!-- Include decision strategy launcher -->
+  <include file="$(arg strategy_launch)"/>
+</launch>
