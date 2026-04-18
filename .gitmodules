@@ -1,0 +1,4 @@
+[submodule "Navigation-filter-test"]
+	path = Navigation-filter-test
+	url = https://github.com/HKUAstar/Navigation-filter-test.git
+	branch = prepare-submodule
