@@ -1,0 +1,44 @@
+# Build and development directories
+build/
+devel/
+*/build/
+*/devel/
+
+# Logs and recordings
+logs/
+*.log
+*.bag
+*.bag.active
+
+# External dependencies (from GitHub)
+livox_ws/
+
+# Standardization directory
+standardization/
+standarlization/
+
+# Python and IDE
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+*.so
+.Python
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ROS specific
+.catkin_workspace
+.rosinstall
+.ros/
+
+# Standardization directory
+standardization/
+
+# OS files
+.DS_Store
+Thumbs.db
