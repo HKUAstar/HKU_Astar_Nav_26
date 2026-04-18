@@ -1,0 +1,13 @@
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  148 |             printf("patrol_path_list[[01;35m[K%d[m[K][%d] = %f\n", [32m[Ki[m[K, j, (double)patrol_path_list[i][j]);
+      |                                      [01;35m[K~^[m[K               [32m[K~[m[K
+      |                                       [01;35m[K|[m[K               [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K             [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                      [32m[K%ld[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:43:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  148 |             printf("patrol_path_list[%d][[01;35m[K%d[m[K] = %f\n", i, [32m[Kj[m[K, (double)patrol_path_list[i][j]);
+      |                                          [01;35m[K~^[m[K              [32m[K~[m[K
+      |                                           [01;35m[K|[m[K              [32m[K|[m[K
+      |                                           [01;35m[Kint[m[K            [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                          [32m[K%ld[m[K

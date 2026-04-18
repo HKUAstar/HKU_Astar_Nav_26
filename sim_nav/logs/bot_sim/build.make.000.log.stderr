@@ -1,0 +1,6 @@
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/bot_sim/src/dbscan_bfs.cpp:1:9:[m[K [01;35m[Kwarning: [m[K#pragma once in main file
+    1 | #pragma [01;35m[Konce[m[K
+      |         [01;35m[K^~~~[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/bot_sim/src/dbscan_bfs_3D.cpp:1:9:[m[K [01;35m[Kwarning: [m[K#pragma once in main file
+    1 | #pragma [01;35m[Konce[m[K
+      |         [01;35m[K^~~~[m[K

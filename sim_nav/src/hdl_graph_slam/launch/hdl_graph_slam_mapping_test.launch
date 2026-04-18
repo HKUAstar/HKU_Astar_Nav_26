@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Runtime toggles -->
+  <arg name="use_sim_time" default="false" />
+  <arg name="start_rviz" default="true" />
+  <arg name="play_bag" default="false" />
+  <arg name="bag_file" default="" />
+  <arg name="bag_rate" default="1.0" />
+
+  <!-- Sensor and frame settings (forwarded to hdl_graph_slam.launch) -->
+  <arg name="points_topic" default="/livox/lidar" />
+  <arg name="map_frame_id" default="map" />
+  <arg name="base_link_frame_id" default="base_link" />
+  <arg name="lidar_odom_frame_id" default="camera_init" />
+  <arg name="published_odom_topic" default="/odom_hdl" />
+  <arg name="livox_frame_id" default="gimbal_frame" />
+
+  <!-- Optional fixed-path PCD export -->
+  <arg name="record_map_points_to_pcd" default="true" />
+  <arg name="pcd_output_path" default="/home/sentry/AstarTraining/Old_nav/sim_nav/src/hdl_graph_slam/map/newscan.pcd" />
+  <arg name="pcd_output_resolution" default="0.05" />
+  <arg name="pcd_output_utm" default="false" />
+
+  <param name="use_sim_time" value="$(arg use_sim_time)" />
+
+  <!-- Start MID360 driver before the SLAM/localization stack -->
+  <include file="$(find livox_ros_driver2)/launch_ROS1/rviz_MID360.launch">
+    <arg name="msg_frame_id" value="$(arg livox_frame_id)" />
+  </include>
+
+  <!-- Include your existing SLAM launch -->
+  <include file="$(find hdl_graph_slam)/launch/hdl_graph_slam.launch">
+    <arg name="points_topic" value="$(arg points_topic)" />
+    <arg name="map_frame_id" value="$(arg map_frame_id)" />
+    <arg name="base_link_frame_id" value="$(arg base_link_frame_id)" />
+    <arg name="lidar_odom_frame_id" value="$(arg lidar_odom_frame_id)" />
+    <arg name="published_odom_topic" value="$(arg published_odom_topic)" />
+  </include>
+
+  <!-- Optional rosbag playback for repeatable testing -->
+  <node pkg="rosbag" type="play" name="bag_play" output="screen" if="$(arg play_bag)"
+        args="--clock -r $(arg bag_rate) $(arg bag_file)" />
+
+  <!-- Optional RViz visualization -->
+  <node pkg="rviz" type="rviz" name="rviz" if="$(arg start_rviz)"
+        args="-d $(find hdl_graph_slam)/rviz/hdl_graph_slam.rviz" />
+
+  <!-- Optional direct PCD export to a fixed output file -->
+  <node pkg="hdl_graph_slam" type="save_map_on_update.py" name="map_points_to_pcd" output="screen" if="$(arg record_map_points_to_pcd)">
+    <param name="destination" value="$(arg pcd_output_path)" />
+    <param name="resolution" value="$(arg pcd_output_resolution)" />
+    <param name="utm" value="$(arg pcd_output_utm)" />
+    <param name="trigger_topic" value="/hdl_graph_slam/map_points" />
+  </node>
+</launch>

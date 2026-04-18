@@ -1,0 +1,2 @@
+set(fast_lio_localization_MESSAGE_FILES "/home/sentry_train_test/AstarTraining/sim_nav/src/FAST_LIO_LOCALIZATION/msg/Pose6D.msg")
+set(fast_lio_localization_SERVICE_FILES "")

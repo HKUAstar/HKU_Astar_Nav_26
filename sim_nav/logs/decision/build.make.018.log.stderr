@@ -1,0 +1,10 @@
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:148:91:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kpoint[m[K’
+  148 |             printf[34m[K([m[K"patrol_path_list[%d][%d] = %f\n", i, j, (double)patrol_path_list[i][j]
+      |                   [34m[K~[m[K                                                                       [01;31m[K^[m[K
+      |                                                                                           [32m[K)[m[K
+  149 |             [32m[Kpoint[m[K.push_back(patrol_path_list[i][j]);
+      |             [32m[K~~~~~[m[K                                                                          
+make[2]: *** [CMakeFiles/decision_node.dir/build.make:63: CMakeFiles/decision_node.dir/src/decision_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:224: CMakeFiles/decision_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

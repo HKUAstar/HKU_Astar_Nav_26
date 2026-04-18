@@ -1,0 +1,7 @@
+image: /home/sentry/AstarTraining/Old_nav/sim_nav/src/bot_sim/map/basket_court.pgm
+resolution: 0.050000
+origin: [-7.013787, -38.657261, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

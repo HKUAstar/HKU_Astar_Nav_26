@@ -1,0 +1,20 @@
+CMake Error at CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 has been removed from CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+  Or, add -DCMAKE_POLICY_VERSION_MINIMUM=3.5 to try configuring anyway.
+
+
+-- Configuring incomplete, errors occurred!
+Base path: /home/sentry_train_test/AstarTraining/sim_nav
+Source space: /home/sentry_train_test/AstarTraining/sim_nav/src
+Build space: /home/sentry_train_test/AstarTraining/sim_nav/build
+Devel space: /home/sentry_train_test/AstarTraining/sim_nav/devel
+Install space: /home/sentry_train_test/AstarTraining/sim_nav/install
+####
+#### Running command: "cmake /home/sentry_train_test/AstarTraining/sim_nav/src -DCATKIN_DEVEL_PREFIX=/home/sentry_train_test/AstarTraining/sim_nav/devel -DCMAKE_INSTALL_PREFIX=/home/sentry_train_test/AstarTraining/sim_nav/install -G Unix Makefiles" in "/home/sentry_train_test/AstarTraining/sim_nav/build"
+####
+Invoking "cmake" failed

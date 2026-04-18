@@ -1,0 +1,8 @@
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Kbot_sim/NavActionAction.h: No such file or directory
+    7 | #include [01;31m[K"bot_sim/NavActionAction.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/decision_node.dir/build.make:63: CMakeFiles/decision_node.dir/src/decision_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:224: CMakeFiles/decision_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

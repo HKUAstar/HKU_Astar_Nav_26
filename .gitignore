@@ -1,0 +1,49 @@
+
+# Build and development directories
+build/
+devel/
+*/build/
+*/devel/
+
+# Logs and recordings
+logs/
+*.log
+*.bag
+*.bag.active
+
+# External dependencies (from GitHub)
+livox_ws/
+ws_livox/
+
+# Large data files
+sim_nav/src/hdl_graph_slam/map/
+sim_nav/src/Point-LIO/PCD/
+sim_nav/src/Point-LIO/image/
+ws_livox/
+
+# Standardization directory
+standardization/
+standarlization/
+
+# Python and IDE
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+*.so
+.Python
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ROS specific
+.catkin_workspace
+.rosinstall
+.ros/
+
+# OS files
+.DS_Store
+Thumbs.db

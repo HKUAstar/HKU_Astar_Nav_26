@@ -1,0 +1,108 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _decision_generate_messages_check_deps_Angles
+[  0%] Built target _decision_generate_messages_check_deps_Armors
+[  0%] Built target _decision_generate_messages_check_deps_NavFeedback
+[  0%] Built target _decision_generate_messages_check_deps_NavGoal
+[  0%] Built target _decision_generate_messages_check_deps_NavActionResult
+[  0%] Built target _decision_generate_messages_check_deps_Target
+[  0%] Built target _decision_generate_messages_check_deps_GameStats
+[  0%] Built target _decision_generate_messages_check_deps_Armor
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target _decision_generate_messages_check_deps_NavResult
+[  0%] Built target _decision_generate_messages_check_deps_NavActionFeedback
+[  0%] Built target _decision_generate_messages_check_deps_TargetCommand
+[  0%] Built target _decision_generate_messages_check_deps_NavActionGoal
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target _decision_generate_messages_check_deps_NavAction
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[ 18%] Built target decision_generate_messages_nodejs
+[ 36%] Built target decision_generate_messages_cpp
+[ 56%] Built target decision_generate_messages_py
+[ 76%] Built target decision_generate_messages_eus
+[ 94%] Built target decision_generate_messages_lisp
+[35m[1mScanning dependencies of target decision_node[0m
+[ 97%] Built target serial_test_receive_node
+[ 97%] Built target decision_generate_messages
+[ 98%] [32mBuilding CXX object CMakeFiles/decision_node.dir/src/decision_node.cpp.o[0m
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:150:43:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  150 |                 printf("patrol_path_list[[01;35m[K%d[m[K][%d] = %f\n", [32m[Ki[m[K, j, value);
+      |                                          [01;35m[K~^[m[K               [32m[K~[m[K
+      |                                           [01;35m[K|[m[K               [32m[K|[m[K
+      |                                           [01;35m[Kint[m[K             [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                          [32m[K%ld[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:150:47:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  150 |                 printf("patrol_path_list[%d][[01;35m[K%d[m[K] = %f\n", i, [32m[Kj[m[K, value);
+      |                                              [01;35m[K~^[m[K              [32m[K~[m[K
+      |                                               [01;35m[K|[m[K              [32m[K|[m[K
+      |                                               [01;35m[Kint[m[K            [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                              [32m[K%ld[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:1[m[K:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:27:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  153 |                 ROS_ERROR([01;35m[K"patrol_path_list[%d][%d] is not a number"[m[K, [32m[Ki[m[K, j);
+      |                           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  [32m[K~[m[K
+      |                                                                       [32m[K|[m[K
+      |                                                                       [32m[Ksize_t {aka long unsigned int}[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:214:24:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  214 | #define ROS_ERROR(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Error, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                        [01;36m[K^~~~~~~[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_ERROR[m[K’
+  153 |                 [01;36m[KROS_ERROR[m[K("patrol_path_list[%d][%d] is not a number", i, j);
+      |                 [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:46:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  153 |                 ROS_ERROR("patrol_path_list[[01;36m[K%d[m[K][%d] is not a number", i, j);
+      |                                             [01;36m[K~^[m[K
+      |                                              [01;36m[K|[m[K
+      |                                              [01;36m[Kint[m[K
+      |                                             [32m[K%ld[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:1[m[K:
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:27:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 9 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  153 |                 ROS_ERROR([01;35m[K"patrol_path_list[%d][%d] is not a number"[m[K, i, [32m[Kj[m[K);
+      |                           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K     [32m[K~[m[K
+      |                                                                          [32m[K|[m[K
+      |                                                                          [32m[Ksize_t {aka long unsigned int}[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:214:24:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  214 | #define ROS_ERROR(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Error, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                        [01;36m[K^~~~~~~[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_ERROR[m[K’
+  153 |                 [01;36m[KROS_ERROR[m[K("patrol_path_list[%d][%d] is not a number", i, j);
+      |                 [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/sentry_train_test/AstarTraining/sim_nav/src/decision/src/decision_node.cpp:153:50:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  153 |                 ROS_ERROR("patrol_path_list[%d][[01;36m[K%d[m[K] is not a number", i, j);
+      |                                                 [01;36m[K~^[m[K
+      |                                                  [01;36m[K|[m[K
+      |                                                  [01;36m[Kint[m[K
+      |                                                 [32m[K%ld[m[K
+[100%] [32m[1mLinking CXX executable /home/sentry_train_test/AstarTraining/sim_nav/devel/.private/decision/lib/decision/decision_node[0m
+[100%] Built target decision_node
