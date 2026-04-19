@@ -12,6 +12,17 @@
   <arg name="mcu_launch" default="/home/sentry/AstarTraining/DecisionNode/src/decision_node/launch/mcu_communicator.launch"/>
   <arg name="strategy_launch" default="/home/sentry/AstarTraining/DecisionNode/src/decision_node/launch/strategy_decision_tmp.launch"/>
 
+  <!-- map&odom -->
+  <arg name="map"           default="RMUL2026.yaml" />
+  <arg name="globalmap_pcd" default="RMUL2026.pcd" />
+  <arg name="init_pos_x"    default="10.107939720153809" />
+  <arg name="init_pos_y"    default="-4.187480926513672" />
+  <arg name="init_pos_z"    default="0.0" />
+  <arg name="init_ori_w"    default="0.05464960747042481" />
+  <arg name="init_ori_x"    default="0.0" />
+  <arg name="init_ori_y"    default="0.0" />
+  <arg name="init_ori_z"    default="-0.9985055935763848" />
+
   <!-- Forwarded args for mcu_communicator.launch -->
   <arg name="serial_port" default="/dev/ttyUSB0"/>
   <arg name="baudrate" default="921600"/>
@@ -19,7 +30,17 @@
   <arg name="mcu_output" default="screen"/>
 
   <!-- Include original 3D navigation stack -->
-  <include file="$(arg nav_launch)"/>
+  <include file="$(arg nav_launch)">
+    <arg name="map"           value="$(arg map)" />
+    <arg name="globalmap_pcd" value="$(arg globalmap_pcd)" />
+    <arg name="init_pos_x"    value="$(arg init_pos_x)" />
+    <arg name="init_pos_y"    value="$(arg init_pos_y)" />
+    <arg name="init_pos_z"    value="$(arg init_pos_z)" />
+    <arg name="init_ori_w"    value="$(arg init_ori_w)" />
+    <arg name="init_ori_x"    value="$(arg init_ori_x)" />
+    <arg name="init_ori_y"    value="$(arg init_ori_y)" />
+    <arg name="init_ori_z"    value="$(arg init_ori_z)" />
+  </include>
 
   <!-- Include MCU communication node with configurable args -->
   <include file="$(arg mcu_launch)">
