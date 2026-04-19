@@ -19,16 +19,6 @@
   <arg name="robot_odom_frame_id" value="aft_mapped" />
   <arg name="plot_estimation_errors" value="false" />
 
-  <!-- map & init pose (可从顶层 launch 覆盖) -->
-  <arg name="globalmap_pcd" default="RMUL2026.pcd" />
-  <arg name="init_pos_x"   default="10.107939720153809" />
-  <arg name="init_pos_y"   default="-4.187480926513672" />
-  <arg name="init_pos_z"   default="0.0" />
-  <arg name="init_ori_w"   default="0.05464960747042481" />
-  <arg name="init_ori_x"   default="0.0" />
-  <arg name="init_ori_y"   default="0.0" />
-  <arg name="init_ori_z"   default="-0.9985055935763848" />
-
   <include file="$(find hdl_global_localization)/launch/hdl_global_localization.launch" if="$(arg use_global_localization)" />
 
   <!-- in case you use velodyne_driver, comment out the following line -->
@@ -36,7 +26,7 @@
 
     <!-- globalmap_server_nodelet -->
     <node pkg="nodelet" type="nodelet" name="globalmap_server_nodelet" args="load hdl_localization/GlobalmapServerNodelet $(arg nodelet_manager)">
-      <param name="globalmap_pcd" value="$(find hdl_graph_slam)/map/$(arg globalmap_pcd)" />
+      <param name="globalmap_pcd" value="$(find hdl_graph_slam)/map/RMUL2026.pcd" /> <!--here?-->
       <param name="convert_utm_to_local" value="true" />
       <param name="downsample_resolution" value="0.1" />
     </node>
@@ -79,13 +69,13 @@
       <param name="init_ori_y" value="0.0" />
       <param name="init_ori_z" value="-0.02202380249008162" /> -->
 
-      <param name="init_pos_x" value="$(arg init_pos_x)" />
-      <param name="init_pos_y" value="$(arg init_pos_y)" />
-      <param name="init_pos_z" value="$(arg init_pos_z)" />
-      <param name="init_ori_w" value="$(arg init_ori_w)" />
-      <param name="init_ori_x" value="$(arg init_ori_x)" />
-      <param name="init_ori_y" value="$(arg init_ori_y)" />
-      <param name="init_ori_z" value="$(arg init_ori_z)" />
+      <param name="init_pos_x" value="10.107939720153809" />
+      <param name="init_pos_y" value="-4.187480926513672" />
+      <param name="init_pos_z" value="0.0" />
+      <param name="init_ori_w" value="0.05464960747042481" />
+      <param name="init_ori_x" value="0.0" />
+      <param name="init_ori_y" value="0.0" />
+      <param name="init_ori_z" value="-0.9985055935763848" />
 
 
       <param name="use_global_localization" value="$(arg use_global_localization)" />
