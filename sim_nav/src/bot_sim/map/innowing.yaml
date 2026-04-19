@@ -1,4 +1,4 @@
-image: /home/sentry/AstarTraining/Old_nav/sim_nav/src/bot_sim/map/base.pgm
+image: /home/sentry/AstarTraining/Old_nav/sim_nav/src/bot_sim/map/innowing.pgm
 resolution: 0.050000
 origin: [-30.503553, -12.380271, 0.000000]
 negate: 0
