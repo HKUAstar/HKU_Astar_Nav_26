@@ -1,0 +1,42 @@
+rog_map:
+  # 地图分辨率 [m/cell]
+  # 与 hdl_localization 的 downsample_resolution=0.1 保持一致
+  resolution: 0.1
+  # 局部滑动窗口尺寸 [x, y, z]（单位 m）
+  # 至少覆盖 esdf_scan_radius(6m) 的两倍
+  map_size: [20, 20, 3]
+
+  esdf:
+    enable: true
+    resolution: 0.1
+    local_update_box: [12, 12, 2]
+
+  ros_callback:
+    enable: true
+    cloud_topic: "/livox/lidar"
+    odom_topic: "/odom"
+    odom_timeout: 2.0
+
+  raycasting:
+    enable: true
+    # 自身遮挡过滤
+    blind_filter_en: true
+    blind_filter_dis: 0.35
+    # MID360 最大量程 40m，此处限制到 8m（室内场景）
+    ray_range: [0.3, 8.0]
+    p_occ: 0.85
+    p_free: 0.499
+
+  map_sliding:
+    enable: true
+    # 机器人移动超过该距离后地图滑动 [m]
+    threshold: 0.3
+
+  visualization:
+    # 调试时设 true，正式运行设 false（有订阅者才发布，不影响性能）
+    enable: false
+    viz_time_rate: 5          # Hz，调试时可设 1~5
+    pub_unknown_map_en: false # 不需要未知区可视化
+    use_dynamic_reconfigure: false
+    visualization_range: [12, 12, 2]
+

@@ -1,0 +1,57 @@
+<launch>
+    <!-- ================================================================
+         dstarlite_esdf node
+         ROG-Map 参数由私有命名空间 (~) 读取，即 /dstarlite/rog_map/...
+         使用 rosparam load 保持 yaml 结构完整性
+    ================================================================ -->
+    <node pkg="bot_sim" type="dstarlite_esdf" name="dstarlite_esdf" output="screen">
+
+        <!-- ROG-Map 参数（yaml 加载到私有命名空间 /dstarlite/） -->
+        <rosparam command="load"
+                  file="$(find bot_sim)/config/rog_map_config.yaml"/>
+
+        <!-- 静态地图 -->
+        <param name="map_topic_name"   value="/map"/>
+        <param name="map_frame_name"   value="map"/>
+
+        <!-- 坐标系 -->
+        <param name="robot_frame_name" value="virtual_frame"/>
+
+        <!-- 目标点话题 -->
+        <param name="goal_topic_name"  value="/clicked_point"/>
+
+        <!-- 边代价 sigmoid 参数：obstacle_possibility 在 x0_grid 附近斜率最大 -->
+        <param name="x0_grid" type="double" value="60"/>
+        <param name="k_grid"  type="double" value="0.3"/>
+        <!-- 最大附加代价倍数 -->
+        <param name="L_grid"  type="double" value="10"/>
+
+        <!-- 速度 sigmoid 参数 -->
+        <param name="x0_velocity"       type="double" value="130"/>
+        <param name="k_velocity"        type="double" value="-0.25"/>
+        <!-- 最大速度 [m/s] -->
+        <param name="L_velocity"        type="double" value="1.5"/>
+
+        <!-- 接近终点减速 -->
+        <!-- 距终点多远开始减速 [m] -->
+        <param name="start_decrease_dis" type="double" value="2"/>
+        <!-- 最低速度比例（相对最大速度） -->
+        <param name="min_velocity_rate"  type="double" value="0.2"/>
+
+        <!-- ESDF 参数 -->
+        <!-- 机器人半径：此距离内 obstacle_possibility=100 [m] -->
+        <param name="esdf_robot_radius"  type="double" value="0.6"/>
+        <!-- 每帧扫描 ESDF 的范围半径 [m] -->
+        <param name="esdf_scan_radius"   type="double" value="6.0"/>
+
+    </node>
+
+    <!-- cmd_vel 可视化（箭头 marker） -->
+    <node pkg="bot_sim" type="cmd_vel_marker" name="cmd_vel_marker">
+        <param name="cmd_vel_topic"  value="/cmd_vel"/>
+        <param name="marker_topic"   value="/cmd_vel_marker"/>
+        <param name="frame_id"       value="virtual_frame"/>
+        <param name="linear_scale"   type="double" value="1.0"/>
+    </node>
+
+</launch>

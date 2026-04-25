@@ -1,0 +1,27 @@
+<launch>
+  <!--
+    Stage 1: ROG-Map observability (visualization only, no planner change).
+    DO NOT enable concurrently with nav_esdf.launch — both launches would build
+    a ROGMap instance that broadcasts a TF on world->drone, causing TF
+    extrapolation jitter for any consumer.
+  -->
+  <arg name="frame_id_shim" default="true"/>
+
+  <!-- Required: rog_map publishes its visualization topics with frame_id="world"
+       hardcoded in the source. The configured visualization.frame_id key is
+       loaded but never consulted. This identity TF links "world" to the active
+       "map" frame so RViz (fixed_frame=map) can render the voxel grid. -->
+  <group if="$(arg frame_id_shim)">
+    <!-- tf2_ros static_transform_publisher takes exactly 8 positional args:
+         x y z yaw pitch roll parent_frame child_frame  (no trailing period). -->
+    <node pkg="tf2_ros" type="static_transform_publisher"
+          name="rog_map_world_link"
+          args="0 0 0 0 0 0 map world"/>
+  </group>
+
+  <!-- output="screen" during bring-up so rog_map's exit(-1) config validation
+       paths surface in the operator's terminal. Flip to "log" once stable. -->
+  <node pkg="bot_sim" type="rog_map_node" name="rog_map_node" output="screen">
+    <rosparam command="load" file="$(find bot_sim)/config/rog_map_passive.yaml"/>
+  </node>
+</launch>

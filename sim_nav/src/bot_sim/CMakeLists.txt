@@ -25,6 +25,7 @@ find_package(catkin REQUIRED COMPONENTS
   teb_local_planner
   costmap_converter
   angles
+  rog_map
 )
 
 ## System dependencies are found with CMake's conventions
@@ -123,7 +124,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
  INCLUDE_DIRS include
 # LIBRARIES ${PROJECT_NAME}
-CATKIN_DEPENDS roscpp rospy std_msgs serial message_runtime dynamic_reconfigure angles
+CATKIN_DEPENDS roscpp rospy std_msgs serial message_runtime dynamic_reconfigure angles rog_map
 #  DEPENDS system_lib
 )
 
@@ -174,6 +175,7 @@ add_executable(dbscan_bfs_3D src/dbscan_bfs_3D.cpp)
 # add_executable(ser2msg_write_only src/ser2msg_write_only.cpp)
 # add_executable(transform_listener src/transform_listener.cpp)
 add_executable(dstarlite src/dstarlite.cpp)
+add_executable(dstarlite_esdf src/dstarlite_esdf.cpp)
 add_executable(dwa src/dwa.cpp)
 add_executable(cmd_vel_marker src/cmd_vel_marker.cpp)
 # add_executable(dstarlite src/dstarlite_test_while.cpp)
@@ -260,6 +262,15 @@ target_link_libraries(dbscan_bfs_3D
 target_link_libraries(dstarlite
   ${catkin_LIBRARIES}
 )
+target_link_libraries(dstarlite_esdf
+  ${catkin_LIBRARIES}
+)
+
+# --- Stage 1 ROG-Map observability node ---
+add_executable(rog_map_node src/rog_map_node.cpp)
+add_dependencies(rog_map_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(rog_map_node ${catkin_LIBRARIES})
+
 # target_link_libraries(dstarlite_pointcloud
 #   ${catkin_LIBRARIES}
 # )
@@ -293,6 +304,7 @@ add_dependencies(dstarlite ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED
 add_dependencies(dwa ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(cmd_vel_marker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(world_align_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(dstarlite_esdf ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # add_dependencies(dstarlite_pointcloud ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 #############
 ## Install ##

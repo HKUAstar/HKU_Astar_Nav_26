@@ -58,6 +58,8 @@
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>
   <depend>costmap_converter</depend>
+  <depend>rog_map</depend>
+
   <build_depend>angles</build_depend>
 
   <buildtool_depend>catkin</buildtool_depend>

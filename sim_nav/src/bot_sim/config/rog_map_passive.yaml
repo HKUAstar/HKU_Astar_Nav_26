@@ -1,0 +1,51 @@
+# ROG-Map Stage 1 observability config — passive, visualization only.
+# Loaded into the rog_map_node private namespace, so keys resolve as
+# /rog_map_node/rog_map/<key>.
+rog_map:
+  resolution: 0.1
+  inflation_resolution: 0.2
+  inflation_step: 2                 # ~ robot radius (2 * 0.2 m = 0.4 m)
+  unk_inflation_en: false
+  unk_inflation_step: 1
+  map_size: [30.0, 30.0, 3.0]
+  virtual_ceil_height: 2.5          # must be > odom.z; sentry obstacle band
+  virtual_ground_height: -1.0       # MUST be < odom.z (hdl /odom z ~ -0.01); else updateProbMap drops every frame
+  load_pcd_en: false
+  point_filt_num: 2
+  intensity_thresh: -1
+
+  map_sliding:
+    enable: true
+    threshold: 0.5
+
+  ros_callback:
+    enable: true
+    cloud_topic: /aligned_points    # hdl_localization registered cloud (frame=map)
+    odom_topic: /odom               # hdl_localization odometry
+    odom_timeout: 2.0
+
+  raycasting:
+    enable: true
+    batch_update_size: 1
+    local_update_box: [25.0, 25.0, 2.5]
+    ray_range: [0.3, 12.0]
+    p_hit: 0.70
+    p_miss: 0.35
+    p_min: 0.12
+    p_max: 0.97
+    p_occ: 0.80
+    p_free: 0.30
+    unk_thresh: 0.70
+
+  frontier_extraction_en: false
+
+  esdf:
+    enable: false
+
+  visualization:
+    enable: true
+    time_rate: 10
+    range: [20.0, 20.0, 3.0]
+    frame_id: map                   # informational; rog_map hardcodes "world" in viz headers
+    pub_unknown_map_en: false
+    use_dynamic_reconfigure: false
