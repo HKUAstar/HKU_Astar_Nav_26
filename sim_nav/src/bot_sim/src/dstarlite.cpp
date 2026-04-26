@@ -339,22 +339,31 @@ void dstarlite::when_receive_new_dynamic_map(nav_msgs::OccupancyGrid::ConstPtr d
             int y = from_real_y_to_map_y(map_vector.y());
             // ROS_INFO("dstar node: %lf %lf %d %d", map_vector.x(), map_vector.y(), x, y);
             if(x < 0 || x >= max_x || y < 0 || y >= max_y || dynamic_map_msg->data[index] == -1)continue;
+            // Update freshness round so the cell is considered "recently observed".
             changed_obstacle_nodes.erase(map[x][y]);
             map[x][y]->round_for_dynamic_map = for_dynamic_map_round;
             changed_obstacle_nodes.insert(map[x][y]);
-            // if(dynamic_map_msg->data[index] != map[x][y]->obstacle_possibility && dynamic_map_msg->data[index] >= map[x][y]->static_obstacle_possibility){
-            map[x][y]->obstacle_possibility = std::max((double)dynamic_map_msg->data[index], map[x][y]->static_obstacle_possibility);
-            // ROS_INFO("map:[%d][%d]->obstacle_possibility=%lf",x,y ,map[x][y]->obstacle_possibility);
+            double new_op = std::max((double)dynamic_map_msg->data[index], map[x][y]->static_obstacle_possibility);
+            // PERF FIX: only run dstar_update_node when occupancy actually changes meaningfully.
+            // Without this guard, every callback runs ~40k PQ updates against an unchanged map.
+            if(std::abs(new_op - map[x][y]->obstacle_possibility) < 5.0) continue;
+            map[x][y]->obstacle_possibility = new_op;
             dstar_update_node(map[x][y]);
-            // }
         }
     }
+    // Faster decay: cells that leave the bridge's local window aren't re-observed,
+    // so reset them to their static value within ~1.5 s instead of ~6 s.
+    // (The bridge currently ticks at ~10 Hz, so 15 rounds ~= 1.5 s.)
     while(!changed_obstacle_nodes.empty() && ros::ok()){
         Nodeptr cur = *changed_obstacle_nodes.begin();
-        if(cur->round_for_dynamic_map + 60 <= for_dynamic_map_round){
+        if(cur->round_for_dynamic_map + 15 <= for_dynamic_map_round){
             changed_obstacle_nodes.erase(cur);
-            cur->obstacle_possibility = cur->static_obstacle_possibility;
-            dstar_update_node(cur);
+            if(std::abs(cur->static_obstacle_possibility - cur->obstacle_possibility) >= 5.0){
+                cur->obstacle_possibility = cur->static_obstacle_possibility;
+                dstar_update_node(cur);
+            } else {
+                cur->obstacle_possibility = cur->static_obstacle_possibility;
+            }
         }
         else break;
     }

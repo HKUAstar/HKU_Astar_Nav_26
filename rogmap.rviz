@@ -9,6 +9,8 @@ Panels:
         - /PointCloud21
         - /PointCloud22
         - /Path1
+        - /PointCloud23
+        - /Map3
       Splitter Ratio: 0.5
     Tree Height: 439
   - Class: rviz/Selection
@@ -166,7 +168,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
@@ -181,7 +183,17 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /rog_grid
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -210,7 +222,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.4565887451171875
+      Distance: 13.03902530670166
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -226,9 +238,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.804796576499939
+      Pitch: 0.6447966694831848
       Target Frame: <Fixed Frame>
-      Yaw: 1.8249585628509521
+      Yaw: 3.692697048187256
     Saved: ~
 Window Geometry:
   Displays:

@@ -59,6 +59,8 @@
   <depend>actionlib_msgs</depend>
   <depend>costmap_converter</depend>
   <depend>rog_map</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
 
   <build_depend>angles</build_depend>
 

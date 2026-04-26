@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
   geometry_msgs
   nav_msgs
   visualization_msgs
@@ -270,6 +271,11 @@ target_link_libraries(dstarlite_esdf
 add_executable(rog_map_node src/rog_map_node.cpp)
 add_dependencies(rog_map_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(rog_map_node ${catkin_LIBRARIES})
+
+# --- Stage 2 ROG-Map -> /grid bridge node ---
+add_executable(rog_map_to_grid_node src/rog_map_to_grid_node.cpp)
+add_dependencies(rog_map_to_grid_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(rog_map_to_grid_node ${catkin_LIBRARIES})
 
 # target_link_libraries(dstarlite_pointcloud
 #   ${catkin_LIBRARIES}

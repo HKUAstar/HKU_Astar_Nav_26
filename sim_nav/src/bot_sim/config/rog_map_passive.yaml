@@ -4,19 +4,19 @@
 rog_map:
   resolution: 0.1
   inflation_resolution: 0.2
-  inflation_step: 2                 # ~ robot radius (2 * 0.2 m = 0.4 m)
+  inflation_step: 1                 # robot radius: 0 * 0.2 m = 0 m  (was 1 → 0.2 m, now minimal)
   unk_inflation_en: false
   unk_inflation_step: 1
-  map_size: [30.0, 30.0, 3.0]
-  virtual_ceil_height: 2.5          # must be > odom.z; sentry obstacle band
+  map_size: [30.0, 30.0, 8.0]
+  virtual_ceil_height: 5.0          # must be > odom.z; hdl_localization z drifts ~3-4 m at runtime
   virtual_ground_height: -1.0       # MUST be < odom.z (hdl /odom z ~ -0.01); else updateProbMap drops every frame
   load_pcd_en: false
-  point_filt_num: 2
+  point_filt_num: 1                 # was 2 — keep every point so all available free-rays clear the map (faster forgetting)
   intensity_thresh: -1
 
   map_sliding:
     enable: true
-    threshold: 0.5
+    threshold: 0.1                  # was 0.3 — any 10 cm motion slides+evicts a band of stale far cells
 
   ros_callback:
     enable: true
@@ -27,13 +27,18 @@ rog_map:
   raycasting:
     enable: true
     batch_update_size: 1
-    local_update_box: [25.0, 25.0, 2.5]
+    # half-extent 7 m — well inside ray_range 12 m so EVERY retained voxel
+    # gets free-rays passing through it, AND a small slide threshold evicts
+    # the outer ring quickly when the robot moves. z extent must be large
+    # enough that the obstacle band (z=0.05..2) stays inside the box even
+    # when hdl_localization odom z drifts to several meters.
+    local_update_box: [14.0, 14.0, 8.0]
     ray_range: [0.3, 12.0]
     p_hit: 0.70
-    p_miss: 0.35
+    p_miss: 0.20           # was 0.35 → stronger free-space evidence per ray; log-odds -1.39 vs -0.62
     p_min: 0.12
-    p_max: 0.97
-    p_occ: 0.80
+    p_max: 0.65            # was 0.75 → confidence clamp at log-odds 0.62; <1 free ray clears
+    p_occ: 0.65            # was 0.70 → match p_max so voxels flip to free as soon as they fall under the cap
     p_free: 0.30
     unk_thresh: 0.70
 
@@ -45,7 +50,7 @@ rog_map:
   visualization:
     enable: true
     time_rate: 10
-    range: [20.0, 20.0, 3.0]
+    range: [14.0, 14.0, 8.0]        # must be <= local_update_box; otherwise rog_map silently stops publishing
     frame_id: map                   # informational; rog_map hardcodes "world" in viz headers
     pub_unknown_map_en: false
     use_dynamic_reconfigure: false

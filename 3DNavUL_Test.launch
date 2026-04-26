@@ -2,6 +2,15 @@
     <!-- Stage 1 ROG-Map observability toggle (default OFF; opt-in per launch). -->
     <arg name="enable_rog_map_observer" default="false"/>
 
+    <!-- Stage 2: ROG-Map -> /rog_grid bridge for D*-Lite. Default OFF.
+         When enable_rog_costmap:=true, the bridge requires Stage 1; bridge
+         enforces this at runtime via a 5 s waitForMessage gate.
+         costmap_source selects which topic dstarlite consumes:
+           dbscan -> /grid    (legacy; no publisher today)
+           rog    -> /rog_grid (Stage 2 bridge) -->
+    <arg name="enable_rog_costmap" default="false"/>
+    <arg name="costmap_source"     default="dbscan"/>
+
     <!-- <include file="$(find pcd2pgm)/launch/pcd2pgm.launch" /> -->
     <include file="$(find bot_sim)/launch_real/map_server.launch" />
     
@@ -21,8 +30,19 @@
     <include file="$(find bot_sim)/launch_real/rog_map_observability.launch"
              if="$(arg enable_rog_map_observer)"/>
 
+    <!-- Stage 2: ROG-Map -> /rog_grid bridge. Requires Stage 1 at runtime. -->
+    <include file="$(find bot_sim)/launch_real/rog_map_costmap_bridge.launch"
+             if="$(arg enable_rog_costmap)"/>
+
     <!-- <include file="$(find bot_sim)/launch_real/dbscan_bfs_3D.launch" /> -->
-    <include file="$(find bot_sim)/launch_real/dstarlite.launch" />
+    <!-- D*-Lite: two-include if/unless pattern lets us pass dynamic_map_topic_name
+         only when costmap_source==rog. Default branch keeps legacy /grid. -->
+    <include file="$(find bot_sim)/launch_real/dstarlite.launch"
+             if="$(eval costmap_source == 'rog')">
+        <arg name="dynamic_map_topic_name" value="/rog_grid"/>
+    </include>
+    <include file="$(find bot_sim)/launch_real/dstarlite.launch"
+             unless="$(eval costmap_source == 'rog')"/>
     
     <include file="$(find bot_sim)/launch_real/ser2msg_tf_decision_givepoint.launch" />
 

@@ -1,0 +1,42 @@
+<launch>
+  <!-- Stage 2: ROG-Map (3D occupancy) -> nav_msgs/OccupancyGrid bridge for D*-Lite. -->
+  <!--                                                                              -->
+  <!-- PREREQUISITE: Stage 1 (rog_map_observability.launch) MUST be running.        -->
+  <!-- The bridge calls waitForMessage(5s) on its cloud_in topic at startup; if no  -->
+  <!-- message arrives it logs ROS_FATAL and exits. required="false" below means    -->
+  <!-- that exit does NOT bring down dstarlite or hdl_localization.                  -->
+
+  <arg name="cloud_topic"    default="/rog_map_node/rog_map/inf_occ"/>
+  <arg name="odom_topic"     default="/odom"/>
+  <arg name="grid_topic"     default="/rog_grid"/>
+  <arg name="cloud_timeout"  default="0.5"/>
+  <arg name="z_min"          default="0.05"/>
+  <arg name="z_max"          default="2.0"/>
+  <!-- res MUST equal /map (PGM) resolution. Mismatch causes striped
+       projection in dstarlite (planner threads paths through gaps). -->
+  <arg name="res"            default="0.05"/>
+  <arg name="window_m"       default="10.0"/>
+  <arg name="voxel_lattice"  default="0.2"/>
+  <arg name="heartbeat_hz"   default="1.0"/>
+  <arg name="soft_rim_cells" default="2"/>
+  <arg name="soft_rim_value" default="60"/>
+  <arg name="startup_wait_s" default="5.0"/>
+
+  <node pkg="bot_sim" type="rog_map_to_grid_node" name="rog_map_to_grid_node"
+        output="screen" required="false">
+    <remap from="cloud_in" to="$(arg cloud_topic)"/>
+    <remap from="odom_in"  to="$(arg odom_topic)"/>
+    <remap from="grid_out" to="$(arg grid_topic)"/>
+
+    <param name="cloud_timeout"  value="$(arg cloud_timeout)"/>
+    <param name="z_min"          value="$(arg z_min)"/>
+    <param name="z_max"          value="$(arg z_max)"/>
+    <param name="res"            value="$(arg res)"/>
+    <param name="window_m"       value="$(arg window_m)"/>
+    <param name="voxel_lattice"  value="$(arg voxel_lattice)"/>
+    <param name="heartbeat_hz"   value="$(arg heartbeat_hz)"/>
+    <param name="soft_rim_cells" value="$(arg soft_rim_cells)"/>
+    <param name="soft_rim_value" value="$(arg soft_rim_value)"/>
+    <param name="startup_wait_s" value="$(arg startup_wait_s)"/>
+  </node>
+</launch>
