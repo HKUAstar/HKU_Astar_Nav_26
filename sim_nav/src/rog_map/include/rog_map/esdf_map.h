@@ -87,6 +87,14 @@ namespace rog_map {
                                 const double &visualize_z,
                                 sensor_msgs::PointCloud2 &pc2) ;
 
+        // Phase 3 (rog_planner): expose the writer-side mutex so reader
+        // code (planner / L-BFGS optimizer) can hold it for the duration of
+        // an outer optimize() call to prevent torn reads against the 1 kHz
+        // updateESDF3D() writer. Returns the same mutex used internally
+        // by updateESDF3D(). Recursive lock NOT supported — do NOT call
+        // updateESDF3D from a thread that already holds this mutex.
+        std::mutex& getUpdateMtx() { return update_esdf_mtx; }
+
     private:
 
         template<typename F_get_val, typename F_set_val>

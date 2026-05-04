@@ -11,6 +11,15 @@
     <arg name="enable_rog_costmap" default="false"/>
     <arg name="costmap_source"     default="dbscan"/>
 
+    <!-- Phase 3: planner selection.
+           dstar (default) -> legacy D*-Lite, identical to today's stack
+           rog             -> rog_planner (ESDF-aware A* + L-BFGS B-spline)
+         When planner==rog the planner constructs its OWN SentryMap with
+         ESDF enabled, so the rog_map_observer should be left OFF to avoid
+         double-processing /aligned_points. -->
+    <arg name="planner"     default="dstar"/>
+    <arg name="static_pcd"  default=""/>
+
     <!-- <include file="$(find pcd2pgm)/launch/pcd2pgm.launch" /> -->
     <include file="$(find bot_sim)/launch_real/map_server.launch" />
     
@@ -26,9 +35,12 @@
     <include file="$(find bot_sim)/launch_real/real_robot_transform.launch" />
     <!-- <include file="$(find livox_cloudpoint_processor)/launch/lidar_filter_pointcloud.launch" /> -->
 
-    <!-- Stage 1: passive ROG-Map observer (visualization only). Gated OFF by default. -->
+    <!-- Stage 1: passive ROG-Map observer (visualization only). Gated OFF by default.
+         Auto-disabled when planner==rog because rog_planner constructs its OWN
+         SentryMap with ESDF enabled \u2014 running both would double-process
+         /aligned_points and have two static_transform_publishers fight over map\u2192world. -->
     <include file="$(find bot_sim)/launch_real/rog_map_observability.launch"
-             if="$(arg enable_rog_map_observer)"/>
+             if="$(eval enable_rog_map_observer and planner != 'rog')"/>
 
     <!-- Stage 2: ROG-Map -> /rog_grid bridge. Requires Stage 1 at runtime. -->
     <include file="$(find bot_sim)/launch_real/rog_map_costmap_bridge.launch"
@@ -38,11 +50,17 @@
     <!-- D*-Lite: two-include if/unless pattern lets us pass dynamic_map_topic_name
          only when costmap_source==rog. Default branch keeps legacy /grid. -->
     <include file="$(find bot_sim)/launch_real/dstarlite.launch"
-             if="$(eval costmap_source == 'rog')">
+             if="$(eval planner == 'dstar' and costmap_source == 'rog')">
         <arg name="dynamic_map_topic_name" value="/rog_grid"/>
     </include>
     <include file="$(find bot_sim)/launch_real/dstarlite.launch"
-             unless="$(eval costmap_source == 'rog')"/>
+             if="$(eval planner == 'dstar' and costmap_source != 'rog')"/>
+
+    <!-- Phase 3: ROG-Map-aware planner. Mutually exclusive with dstarlite. -->
+    <include file="$(find rog_planner)/launch/rog_planner.launch"
+             if="$(eval planner == 'rog')">
+        <arg name="static_pcd" value="$(arg static_pcd)"/>
+    </include>
     
     <include file="$(find bot_sim)/launch_real/ser2msg_tf_decision_givepoint.launch" />
 

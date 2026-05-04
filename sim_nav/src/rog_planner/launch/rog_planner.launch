@@ -1,0 +1,69 @@
+<launch>
+  <!-- Phase 3: rog_planner — ROG-Map-aware 3D planner.
+       Drop-in alternative to dstarlite. The planner constructs its OWN
+       SentryMap (subclass of rog_map::ROGMap) with ESDF enabled, so
+       running this launch SHOULD NOT be combined with
+       rog_map_observability.launch (would double-process /aligned_points).
+  -->
+  <arg name="static_pcd"     default=""/>
+  <arg name="chassis_height" default="0.3"/>
+  <arg name="safe_dist"      default="0.4"/>
+  <arg name="v_max"          default="1.5"/>   <!-- conservative for first live test; raise to 2.5 after bench -->
+  <arg name="a_max"          default="4.0"/>
+  <arg name="arrival_radius" default="0.25"/>
+  <arg name="replan_rate"    default="5.0"/>
+  <arg name="tracker_rate"   default="100.0"/>
+  <arg name="w_smooth"       default="10.0"/>
+  <arg name="w_obs"          default="10000.0"/>
+  <arg name="w_dyn"          default="100.0"/>
+  <arg name="astar_resolution" default="0.1"/>
+  <arg name="static_map_enable" default="true"/>
+  <arg name="static_map_topic" default="/map"/>
+  <arg name="static_map_inflation_radius" default="0.05"/>
+  <arg name="static_map_safe_dist" default="0.25"/>
+  <arg name="w_static_obs" default="50000.0"/>
+
+  <node pkg="rog_planner" type="rog_planner_node" name="rog_planner_node"
+        output="screen">
+    <!-- ROG-Map config (ESDF enabled). Loaded under ~rog_map/. -->
+    <rosparam command="load"
+              file="$(find bot_sim)/config/rog_planner_map.yaml"/>
+
+    <!-- Optional static-PCD bootstrap. When non-empty, the SentryMap
+         pre-loads the PCD and bakes it into the ESDF before first replan. -->
+    <param name="rog_map/load_pcd_en" value="$(eval bool(arg('static_pcd')))"/>
+    <param name="rog_map/pcd_name"    value="$(arg static_pcd)"/>
+
+    <param name="map_frame"      value="map"/>
+    <param name="robot_frame"    value="virtual_frame"/>
+    <param name="chassis_height" value="$(arg chassis_height)"/>
+    <param name="safe_dist"      value="$(arg safe_dist)"/>
+    <param name="v_max"          value="$(arg v_max)"/>
+    <param name="a_max"          value="$(arg a_max)"/>
+    <param name="arrival_radius" value="$(arg arrival_radius)"/>
+    <param name="replan_rate"    value="$(arg replan_rate)"/>
+    <param name="tracker_rate"   value="$(arg tracker_rate)"/>
+    <param name="w_smooth"       value="$(arg w_smooth)"/>
+    <param name="w_obs"          value="$(arg w_obs)"/>
+    <param name="w_dyn"          value="$(arg w_dyn)"/>
+    <param name="astar_resolution" value="$(arg astar_resolution)"/>
+    <param name="static_map_enable" value="$(arg static_map_enable)"/>
+    <param name="static_map_topic" value="$(arg static_map_topic)"/>
+    <param name="static_map_inflation_radius" value="$(arg static_map_inflation_radius)"/>
+    <param name="static_map_safe_dist" value="$(arg static_map_safe_dist)"/>
+    <param name="w_static_obs" value="$(arg w_static_obs)"/>
+  </node>
+
+  <!-- Identity TF: rog_map publishes viz topics with frame_id="world" hardcoded. -->
+  <node pkg="tf2_ros" type="static_transform_publisher"
+        name="rog_planner_world_link"
+        args="0 0 0 0 0 0 map world"/>
+
+  <!-- cmd_vel arrow viz (kept identical to dstarlite for operator parity). -->
+  <node pkg="bot_sim" type="cmd_vel_marker" name="cmd_vel_marker">
+    <param name="cmd_vel_topic" value="/cmd_vel"/>
+    <param name="marker_topic"  value="/cmd_vel_marker"/>
+    <param name="frame_id"      value="virtual_frame"/>
+    <param name="linear_scale"  type="double" value="1.0"/>
+  </node>
+</launch>

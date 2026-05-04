@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rog_planner</name>
+  <version>0.1.0</version>
+  <description>
+    ROG-Map-aware 3-D planner for the sentry navigation stack (Phase 3).
+    Front-end: 3-D voxel A* on ROG-Map's inflated occupancy.
+    Back-end:  uniform B-spline + L-BFGS smoothing with ESDF gradient.
+    Tracker:   100 Hz cmd_vel publisher in virtual_frame, MCU-bridge
+               compatible. Drop-in alternative to dstarlite via launch arg.
+  </description>
+  <maintainer email="sentry@example.com">RM Sentry 2026</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>eigen_conversions</depend>
+  <depend>rog_map</depend>
+</package>

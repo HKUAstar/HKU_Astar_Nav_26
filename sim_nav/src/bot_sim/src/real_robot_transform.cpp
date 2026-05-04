@@ -108,14 +108,18 @@ int main(int argc, char** argv){
         listenTransform();
         if(received_msg){
             tf2::Quaternion q = qhdl * sensor_offset_q;
-            transformStamped1.header.stamp = ros::Time::now();
             transformStamped1.transform.rotation.x = q.x();
             transformStamped1.transform.rotation.y = q.y();
             transformStamped1.transform.rotation.z = q.z();
             transformStamped1.transform.rotation.w = q.w();
-            broadcaster.sendTransform(transformStamped1);
             received_msg = 0;
         }
+        // Always publish gimbal_frame so the TF tree is never broken.
+        // Before the first listenTransform() success the rotation is
+        // sensor_offset_q (identity when all offsets are zero); it updates
+        // to the gravity-aligned value on every successful localization tick.
+        transformStamped1.header.stamp = ros::Time::now();
+        broadcaster.sendTransform(transformStamped1);
         ros::spinOnce();
         rate.sleep();
     }

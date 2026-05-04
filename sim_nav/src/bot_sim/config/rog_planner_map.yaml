@@ -1,0 +1,64 @@
+# ROG-Map config for rog_planner. Same observability params as
+# rog_map_passive.yaml, but with ESDF enabled and (optionally) static-PCD
+# bootstrap so the planner sees wall priors at startup.
+#
+# Loaded into the rog_planner_node private namespace, so keys resolve as
+# /rog_planner_node/rog_map/<key>.
+rog_map:
+  resolution: 0.05
+  inflation_resolution: 0.05
+  inflation_step: 0          # no extra ROG hard inflation; static /map now supplies wall barriers
+  unk_inflation_en: false
+  unk_inflation_step: 1
+  map_size: [30.0, 30.0, 8.0]
+  virtual_ceil_height: 1.5    # only inflate points below 1.5 m (chassis + standing person height)
+  virtual_ground_height: -0.5 # only inflate points above -0.5 m (suppress deep-floor noise)
+
+  # Static-map bootstrap: set load_pcd_en:true and pcd_name:<abs path>
+  # so the static field map is baked into the ESDF at startup.
+  # Default off — flip via launch arg `static_pcd:=<path>`.
+  load_pcd_en: false
+  pcd_name: ""
+
+  point_filt_num: 1
+  intensity_thresh: -1
+
+  map_sliding:
+    enable: true
+    threshold: 0.1
+
+  ros_callback:
+    enable: true
+    cloud_topic: /aligned_points
+    odom_topic: /odom
+    odom_timeout: 2.0
+
+  raycasting:
+    enable: true
+    batch_update_size: 1
+    local_update_box: [14.0, 14.0, 8.0]
+    ray_range: [0.3, 12.0]
+    p_hit: 0.70
+    p_miss: 0.20
+    p_min: 0.12
+    p_max: 0.65
+    p_occ: 0.65
+    p_free: 0.30
+    unk_thresh: 0.70
+
+  frontier_extraction_en: false
+
+  # ESDF: required by rog_planner.
+  esdf:
+    enable: true
+    resolution: 0.2
+    # Must be <= raycasting.local_update_box. Smaller box = lower ESDF cost.
+    local_update_box: [12.0, 12.0, 4.0]
+
+  visualization:
+    enable: true
+    time_rate: 5
+    range: [14.0, 14.0, 8.0]
+    frame_id: map
+    pub_unknown_map_en: false
+    use_dynamic_reconfigure: false
