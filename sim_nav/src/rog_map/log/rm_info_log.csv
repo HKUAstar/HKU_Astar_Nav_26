@@ -1,24 +1,24 @@
 [ProbMap]
-	map_size_d: 30.05 30.05  8.05
+	map_size_d: 14.05 14.05  4.05
 	resolution: 0.05
-	map_size_i: 601 601 161
-	local_update_box_size: 14.05 14.05  8.05
-	p_min: 0.12
-	p_max: 0.65
+	map_size_i: 281 281  81
+	local_update_box_size: 12.05 12.05  3.05
+	p_min: 0.05
+	p_max: 0.8
 	p_hit: 0.7
-	p_miss: 0.2
+	p_miss: 0.05
 	p_occ: 0.65
-	p_free: 0.3
+	p_free: 0.35
 	unk_thresh: 0.7
-	map_sliding_thresh: 0.1
+	map_sliding_thresh: 0.05
 	map_sliding_en: 1
 	fix_map_origin: 0 0 0
-	visualization_range: 14 14  8
-	virtual_ceil_height: 1.45
-	virtual_ground_height: -0.4
+	visualization_range: 12 12  3
+	virtual_ceil_height: 0.95
+	virtual_ground_height: -0.1
 	batch_update_size: 1
 	frontier_extraction_en: 0
 [InfMap]
 	resolution: 0.05
-	map_size_i: 605 605 165
-	map_size_d: 30.25 30.25  8.25
+	map_size_i: 285 285  85
+	map_size_d: 14.25 14.25  4.25

@@ -21,25 +21,51 @@ bool AStar3D::snapToFree(const Vec3& from, const Vec3& pos,
   // halo or just outside the local map.
   Vec3 dir = pos - from;
   double L = dir.norm();
-  if (L < 1e-6) return false;
-  dir /= L;
-  int n = static_cast<int>(std::min(L, radius) / p_.resolution);
-  for (int i = 0; i <= n; ++i) {
-    Vec3 q = pos - dir * (i * p_.resolution);
-    q.z()  = p_.chassis_height;
-    if (!isBlocked(q)) {
-      out = q;
-      return true;
+  if (L > 1e-6) {
+    Vec3 d = dir / L;
+    int n = static_cast<int>(std::min(L, radius) / p_.resolution);
+    for (int i = 0; i <= n; ++i) {
+      Vec3 q = pos - d * (i * p_.resolution);
+      q.z()  = p_.chassis_height;
+      if (!isBlocked(q)) {
+        out = q;
+        return true;
+      }
+    }
+  }
+  // Fallback: radial spiral search (chassis-stuck case). Sweep a square
+  // ring at increasing radius and return the first non-blocked cell.
+  // Uses 2-D ring search; z is fixed to chassis height. This is the
+  // anti-stuck primitive for "robot wedged into a low-ESDF zone".
+  const double res = p_.resolution;
+  const int max_r = static_cast<int>(std::max(0.0, radius) / res);
+  for (int r = 1; r <= max_r; ++r) {
+    for (int dx = -r; dx <= r; ++dx) {
+      for (int dy = -r; dy <= r; ++dy) {
+        if (std::abs(dx) != r && std::abs(dy) != r) continue;  // ring only
+        Vec3 q(pos.x() + dx * res, pos.y() + dy * res, p_.chassis_height);
+        if (!isBlocked(q)) {
+          out = q;
+          return true;
+        }
+      }
     }
   }
   return false;
 }
 
 bool AStar3D::isBlocked(const Vec3& p) const {
-  if (static_map_ && static_map_->isOccupied(Eigen::Vector2d(p.x(), p.y()))) {
-    return true;
+  if (static_map_) {
+    Eigen::Vector2d p2(p.x(), p.y());
+    if (static_map_->isOccupied(p2)) return true;
+    if (static_map_->clearance(p2, p_.static_hard_safe_dist, nullptr) <
+        p_.static_hard_safe_dist) {
+      return true;
+    }
   }
-  return map_->isOccupiedInflate(p);
+  if (map_->isOccupiedInflate(p)) return true;
+  double d = map_->dist(p);
+  return d > 1e-6 && d < p_.hard_safe_dist;
 }
 
 bool AStar3D::transitionBlocked(const Vec3& from, const Vec3& to,

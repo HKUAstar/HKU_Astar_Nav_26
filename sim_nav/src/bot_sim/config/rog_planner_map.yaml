@@ -7,12 +7,13 @@
 rog_map:
   resolution: 0.05
   inflation_resolution: 0.05
-  inflation_step: 0          # no extra ROG hard inflation; static /map now supplies wall barriers
+  inflation_step: 1          # 1-cell hard inflation halo (~5 cm at res=0.05) so live obstacles are visibly avoided
+                             # static /map still supplies long-range wall barrier; this halo is for *dynamic* obstacles
   unk_inflation_en: false
   unk_inflation_step: 1
-  map_size: [30.0, 30.0, 8.0]
-  virtual_ceil_height: 1.5    # only inflate points below 1.5 m (chassis + standing person height)
-  virtual_ground_height: -0.5 # only inflate points above -0.5 m (suppress deep-floor noise)
+  map_size: [14.0, 14.0, 4.0]   # ±7 m local window; bumped from 12 to enlarge detection range
+  virtual_ceil_height: 1    # only inflate points below 1 m (chassis + standing person height)
+  virtual_ground_height: -0.2 # only inflate points above -0.5 m (suppress deep-floor noise)
 
   # Static-map bootstrap: set load_pcd_en:true and pcd_name:<abs path>
   # so the static field map is baked into the ESDF at startup.
@@ -25,7 +26,7 @@ rog_map:
 
   map_sliding:
     enable: true
-    threshold: 0.1
+    threshold: 0.05    # slide on every ~5 cm of motion so the local map re-centers continuously
 
   ros_callback:
     enable: true
@@ -36,29 +37,45 @@ rog_map:
   raycasting:
     enable: true
     batch_update_size: 1
-    local_update_box: [14.0, 14.0, 8.0]
-    ray_range: [0.3, 12.0]
+    local_update_box: [12.0, 12.0, 3.0]   # ≤ map_size; enlarged from 10 for a bit more reach
+    ray_range: [0.30, 6.0]               # min=0.30: drop chassis self-returns (lidar sees its own mount); max=6.0 effective sensor reach
     p_hit: 0.70
-    p_miss: 0.20
-    p_min: 0.12
-    p_max: 0.65
+    p_miss: 0.05      # very aggressive miss → stale cells decay in 1-2 frames once re-rayed
+    p_min: 0.05       # allow deeper decay so cleared cells stay cleared
+    p_max: 0.80
     p_occ: 0.65
-    p_free: 0.30
+    p_free: 0.35      # raise free threshold so weakly-supported cells flip back to free quickly
     unk_thresh: 0.70
+
+    # Visibility-aware stale-occupied decay (post-raycast pass).
+    # PERMANENT FIX for the "ghost trail" problem: every frame, any cell that
+    # is currently OCCUPIED, has unobstructed line-of-sight from the sensor,
+    # AND has been unobserved for `stale_decay_threshold` consecutive frames
+    # is given a miss. Real walls/obstacles get re-hit at least once every
+    # few frames (lidar density is finite, so single-frame absence is normal)
+    # and reset their cooldown. Genuine ghosts never get re-hit and clear
+    # within ~threshold/10 seconds. With p_miss=0.05, a single decay miss
+    # collapses an OCC cell to free in one shot.
+    stale_decay_en: true
+    stale_decay_min_range: 0.32    # slightly above raycast_range_min so we never decay cells inside the chassis footprint
+    stale_decay_max_range: 6.0     # match ray_range max
+    stale_decay_threshold: 8       # 8 consecutive unobserved frames (~0.8 s @10Hz) before a cell is flagged stale
 
   frontier_extraction_en: false
 
   # ESDF: required by rog_planner.
   esdf:
     enable: true
-    resolution: 0.2
-    # Must be <= raycasting.local_update_box. Smaller box = lower ESDF cost.
-    local_update_box: [12.0, 12.0, 4.0]
+    resolution: 0.1
+    # Must be <= raycasting.local_update_box. Enlarged from [8,8,2] to give
+    # the planner / tracker ESDF coverage that matches the new 14 m map and
+    # 12 m raycasting box.
+    local_update_box: [12.0, 12.0, 3.0]
 
   visualization:
     enable: true
-    time_rate: 5
-    range: [14.0, 14.0, 8.0]
+    time_rate: 10
+    range: [12.0, 12.0, 3.0]
     frame_id: map
     pub_unknown_map_en: false
     use_dynamic_reconfigure: false

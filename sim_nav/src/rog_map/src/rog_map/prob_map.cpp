@@ -79,6 +79,7 @@ void ProbMap::initProbMap() {
     raycast_data_.raycaster.setResolution(cfg_.resolution);
     raycast_data_.operation_cnt.resize(map_size, 0);
     raycast_data_.hit_cnt.resize(map_size, 0);
+    raycast_data_.stale_frames_.resize(map_size, 0);
 
     resetLocalMap();
 
@@ -334,6 +335,9 @@ void ProbMap::updateProbMap(const PointCloud& cloud, const Pose& pose) {
     raycast_data_.batch_update_counter++;
     if (raycast_data_.batch_update_counter >= cfg_.batch_update_size) {
         raycast_data_.batch_update_counter = 0;
+        // Visibility-aware stale-occupied decay: enqueue misses for ghost
+        // cells before the cache flush so they reach l_min in one shot.
+        clearStaleOccupied(pos);
         time_consuming_[5] = raycast_data_.update_cache_id_g.size();
         TimeConsuming t_update("update", false);
         probabilisticMapFromCache();
@@ -513,6 +517,8 @@ void ProbMap::resetCell(const int& hash_id) {
         if (cfg_.esdf_en) {
             esdf_map_->updateGridCounter(pos, OCCUPIED, UNKNOWN);
         }
+        // Cell leaves OCCUPIED state via slide eviction.
+        occupied_hash_set_.erase(hash_id);
     }
     else if (isKnownFree(ret)) {
         /// if current state is free
@@ -607,6 +613,12 @@ void ProbMap::hitPointUpdate(const Vec3f& pos, const int& hash_id, const int& hi
             posToGlobalIndex(pos, id_g);
             fcnt_map_->updateFrontierCounter(id_g, false);
         }
+        // Maintain occupied-cell set for the stale-decay pass.
+        if (to_type == GridType::OCCUPIED) {
+            occupied_hash_set_.insert(hash_id);
+        } else if (from_type == GridType::OCCUPIED) {
+            occupied_hash_set_.erase(hash_id);
+        }
     }
 }
 
@@ -655,6 +667,98 @@ void ProbMap::missPointUpdate(const Vec3f& pos, const int& hash_id, const int& h
             posToGlobalIndex(pos, id_g);
             fcnt_map_->updateFrontierCounter(id_g, true);
         }
+        // Maintain occupied-cell set for the stale-decay pass.
+        if (from_type == GridType::OCCUPIED && to_type != GridType::OCCUPIED) {
+            occupied_hash_set_.erase(hash_id);
+        }
+    }
+}
+
+// Visibility-aware stale-occupied decay.
+//
+// Background: ProbMap::raycastProcess only emits free-rays along beams that
+// have a current return. If an obstacle moves and no other return lies along
+// the same beam direction, the cells the obstacle previously occupied receive
+// zero misses and stay at l_max forever — visible as a permanent "trail".
+//
+// Fix: every frame, for each currently-OCCUPIED cell within sensor range that
+// did NOT receive any operation this frame, raycast from cur_odom toward the
+// cell. If no other occupied cell lies on the path, the cell SHOULD have
+// produced a return — since it didn't, it is stale and we enqueue a miss.
+// Real obstacles get re-hit each frame and stay; ghosts decay in one frame.
+void ProbMap::clearStaleOccupied(const Vec3f& cur_odom) {
+    if (!cfg_.stale_decay_en || occupied_hash_set_.empty()) {
+        return;
+    }
+    raycaster::RayCaster rc;
+    rc.setResolution(cfg_.resolution);
+    Vec3f ray_pt;
+
+    // Snapshot the set so insertions/erasures during iteration are safe.
+    std::vector<int> snapshot(occupied_hash_set_.begin(), occupied_hash_set_.end());
+    for (int hash_id : snapshot) {
+        // Cells that received a hit this frame are real — reset cooldown.
+        if (raycast_data_.hit_cnt[hash_id] > 0) {
+            raycast_data_.stale_frames_[hash_id] = 0;
+            continue;
+        }
+        // Cells that received only misses this frame — let normal flow handle.
+        // Don't increment cooldown (avoid double-counting).
+        if (raycast_data_.operation_cnt[hash_id] > 0) {
+            continue;
+        }
+
+        Vec3i id_g;
+        Vec3f cell_pos;
+        hashIdToGlobalIndex(hash_id, id_g);
+        globalIndexToPos(id_g, cell_pos);
+
+        // Range gate.
+        Vec3f delta = cell_pos - cur_odom;
+        double dsq = delta.squaredNorm();
+        if (dsq < cfg_.sqr_stale_decay_min_range ||
+            dsq > cfg_.sqr_stale_decay_max_range) {
+            // Out of detection range — cannot conclude anything; reset.
+            raycast_data_.stale_frames_[hash_id] = 0;
+            continue;
+        }
+
+        // Virtual ceil/ground band.
+        if (cell_pos.z() > cfg_.virtual_ceil_height ||
+            cell_pos.z() < cfg_.virtual_ground_height) {
+            raycast_data_.stale_frames_[hash_id] = 0;
+            continue;
+        }
+
+        // Cast from just outside the robot's inner shell to the cell.
+        // If any intermediate cell is OCCUPIED, target is occluded —
+        // we cannot conclude staleness. Reset cooldown.
+        const double dist = std::sqrt(dsq);
+        Vec3f start = cur_odom + delta * (cfg_.raycast_range_min / dist);
+        rc.setInput(start, cell_pos);
+        bool occluded = false;
+        while (rc.step(ray_pt)) {
+            Vec3i ray_id_g;
+            posToGlobalIndex(ray_pt, ray_id_g);
+            if (ray_id_g == id_g) break;            // arrived at target
+            if (!insideLocalMap(ray_id_g)) { occluded = true; break; }
+            const int rh = getHashIndexFromGlobalIndex(ray_id_g);
+            if (occupancy_buffer_[rh] >= cfg_.l_occ) { occluded = true; break; }
+        }
+        if (occluded) {
+            raycast_data_.stale_frames_[hash_id] = 0;
+            continue;
+        }
+
+        // Cell is visible from sensor with no current return.
+        // Increment cooldown; only fire decay once threshold reached.
+        if (raycast_data_.stale_frames_[hash_id] < 0xFFFF) {
+            raycast_data_.stale_frames_[hash_id]++;
+        }
+        if (raycast_data_.stale_frames_[hash_id] >= cfg_.stale_decay_threshold) {
+            insertUpdateCandidate(id_g, false);
+            raycast_data_.stale_frames_[hash_id] = 0;
+        }
     }
 }
 
@@ -692,6 +796,14 @@ void ProbMap::raycastProcess(const PointCloud& input_cloud, const Vec3f& cur_odo
 
         Vec3f p(pcl_p.x, pcl_p.y, pcl_p.z);
         Vec3i pt_id_g;
+
+        // 1.2.5) inner-radius filter: drop returns inside the sensor's
+        // footprint (chassis self-detection). Without this, the lidar
+        // sees its own mounting structure as a permanent obstacle ring
+        // around the robot, and the planner can never find a free start.
+        if ((p - cur_odom).squaredNorm() < cfg_.sqr_raycast_range_min) {
+            continue;
+        }
 
         // no raycasting, purely add occ pints
         if (!cfg_.raycasting_en) {
@@ -825,4 +937,6 @@ void ProbMap::resetLocalMap() {
     raycast_data_.batch_update_counter = 0;
     std::fill(raycast_data_.operation_cnt.begin(), raycast_data_.operation_cnt.end(), 0);
     std::fill(raycast_data_.hit_cnt.begin(), raycast_data_.hit_cnt.end(), 0);
+    std::fill(raycast_data_.stale_frames_.begin(), raycast_data_.stale_frames_.end(), 0);
+    occupied_hash_set_.clear();
 }

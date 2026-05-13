@@ -8,15 +8,20 @@
   <arg name="static_pcd"     default=""/>
   <arg name="chassis_height" default="0.3"/>
   <arg name="safe_dist"      default="0.4"/>
+  <arg name="hard_safe_dist" default="0.30"/>
+  <arg name="collision_d_min" default="0.30"/>
   <arg name="v_max"          default="1.5"/>   <!-- conservative for first live test; raise to 2.5 after bench -->
   <arg name="a_max"          default="4.0"/>
   <arg name="arrival_radius" default="0.25"/>
   <arg name="replan_rate"    default="5.0"/>
   <arg name="tracker_rate"   default="100.0"/>
-  <arg name="w_smooth"       default="10.0"/>
-  <arg name="w_obs"          default="10000.0"/>
+  <arg name="track_kp"       default="0.45"/>
+  <arg name="track_lookahead_time" default="0.0"/>
+  <arg name="track_search_dt" default="0.02"/>
+  <arg name="w_smooth"       default="800.0"/>  <!-- 200→800: smoother dominates over A* staircase -->
+  <arg name="w_obs"          default="3000.0"/> <!-- 5000→3000: still pushes off obstacles but doesn't oscillate -->
   <arg name="w_dyn"          default="100.0"/>
-  <arg name="astar_resolution" default="0.1"/>
+  <arg name="astar_resolution" default="0.2"/>  <!-- 0.1\u21920.2: matches inflation_resolution; halves staircase frequency before prune -->
   <arg name="static_map_enable" default="true"/>
   <arg name="static_map_topic" default="/map"/>
   <arg name="static_map_inflation_radius" default="0.05"/>
@@ -29,20 +34,31 @@
     <rosparam command="load"
               file="$(find bot_sim)/config/rog_planner_map.yaml"/>
 
-    <!-- Optional static-PCD bootstrap. When non-empty, the SentryMap
-         pre-loads the PCD and bakes it into the ESDF before first replan. -->
-    <param name="rog_map/load_pcd_en" value="$(eval bool(arg('static_pcd')))"/>
-    <param name="rog_map/pcd_name"    value="$(arg static_pcd)"/>
+    <!-- Static-PCD bootstrap is INTENTIONALLY DISABLED here. Loading the
+         static cloud into the live prob_map permanently inflates the entire
+         indoor scene into /inf_occ, where it mixes with live points and
+         appears as "stale rubbish" that never decays (cells that the Livox
+         FoV doesn't currently re-ray are never cleared, regardless of
+         p_miss). Wall barriers are supplied separately via /map +
+         static_map_2d, which the planner consults directly. The arg is
+         kept for compat but force-overridden to disabled. -->
+    <param name="rog_map/load_pcd_en" value="false"/>
+    <param name="rog_map/pcd_name"    value=""/>
 
     <param name="map_frame"      value="map"/>
     <param name="robot_frame"    value="virtual_frame"/>
     <param name="chassis_height" value="$(arg chassis_height)"/>
     <param name="safe_dist"      value="$(arg safe_dist)"/>
+    <param name="hard_safe_dist" value="$(arg hard_safe_dist)"/>
+    <param name="collision_d_min" value="$(arg collision_d_min)"/>
     <param name="v_max"          value="$(arg v_max)"/>
     <param name="a_max"          value="$(arg a_max)"/>
     <param name="arrival_radius" value="$(arg arrival_radius)"/>
     <param name="replan_rate"    value="$(arg replan_rate)"/>
     <param name="tracker_rate"   value="$(arg tracker_rate)"/>
+    <param name="track_kp"       value="$(arg track_kp)"/>
+    <param name="track_lookahead_time" value="$(arg track_lookahead_time)"/>
+    <param name="track_search_dt" value="$(arg track_search_dt)"/>
     <param name="w_smooth"       value="$(arg w_smooth)"/>
     <param name="w_obs"          value="$(arg w_obs)"/>
     <param name="w_dyn"          value="$(arg w_dyn)"/>

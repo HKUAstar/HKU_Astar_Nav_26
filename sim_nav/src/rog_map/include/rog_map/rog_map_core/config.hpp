@@ -211,6 +211,25 @@ namespace rog_map {
             raycast_range_max = temp_ray_range[1];
             sqr_raycast_range_max = raycast_range_max * raycast_range_max;
             sqr_raycast_range_min = raycast_range_min * raycast_range_min;
+
+            // Visibility-aware stale-occupied decay (post-raycast pass).
+            // Fixes the "ghost trail" issue where moving obstacles leave
+            // permanently-occupied cells behind because no current return
+            // happens to lie along the same beam direction.
+            LoadParam(name_space + "/raycasting/stale_decay_en", stale_decay_en, true);
+            LoadParam(name_space + "/raycasting/stale_decay_min_range",
+                      stale_decay_min_range, raycast_range_min * 1.2);
+            LoadParam(name_space + "/raycasting/stale_decay_max_range",
+                      stale_decay_max_range, raycast_range_max);
+            // Cooldown: number of consecutive frames a cell must be both
+            // OCCUPIED and unobserved (no operation, visible from sensor)
+            // before stale-decay fires. Prevents real walls/obstacles
+            // (which are not hit on every single frame due to finite
+            // lidar density) from flickering away.
+            LoadParam(name_space + "/raycasting/stale_decay_threshold",
+                      stale_decay_threshold, 6);
+            sqr_stale_decay_min_range = stale_decay_min_range * stale_decay_min_range;
+            sqr_stale_decay_max_range = stale_decay_max_range * stale_decay_max_range;
             vector<double> update_box;
             LoadParam(name_space + "/raycasting/local_update_box", update_box, vector<double>{999, 999, 999});
             if (update_box.size() != 3) {
@@ -316,6 +335,13 @@ namespace rog_map {
         /* probability update */
         double raycast_range_min, raycast_range_max;
         double sqr_raycast_range_min, sqr_raycast_range_max;
+        // Visibility-aware stale-occupied decay parameters.
+        bool stale_decay_en{true};
+        double stale_decay_min_range{0.4};
+        double stale_decay_max_range{8.0};
+        double sqr_stale_decay_min_range{0.16};
+        double sqr_stale_decay_max_range{64.0};
+        int stale_decay_threshold{6};
         int point_filt_num, batch_update_size;
         float p_hit, p_miss, p_min, p_max, p_occ, p_free;
         float l_hit, l_miss, l_min, l_max, l_occ, l_free;

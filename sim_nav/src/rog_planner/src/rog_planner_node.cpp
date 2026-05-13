@@ -33,6 +33,7 @@
 #include <chrono>
 #include <cmath>
 #include <functional>
+#include <limits>
 #include <memory>
 #include <mutex>
 
@@ -63,7 +64,18 @@ public:
     pnh_.param("w_obs",          w_obs_,          10000.0);
     pnh_.param("w_dyn",          w_dyn_,          100.0);
     pnh_.param("blend_time",     blend_time_,     0.1);
-    pnh_.param("collision_d_min",collision_d_min_, 0.05);
+    pnh_.param("hard_safe_dist", hard_safe_dist_, 0.30);
+    pnh_.param("collision_d_min",collision_d_min_, hard_safe_dist_);
+    // Live tracker safety threshold. Only used by commandSegmentIsSafe
+    // to reject the *next* short horizon. Set lower than hard_safe_dist
+    // (which is the planner's conservative margin) so a path that
+    // nominally hugs the planner margin doesn't get the trajectory
+    // rejected on every tick — the live check only triggers on a
+    // genuinely-newer-and-closer obstacle.
+    pnh_.param("tracker_safe_dist", tracker_safe_dist_, 0.18);
+    pnh_.param("track_kp",       track_kp_,       0.45);
+    pnh_.param("track_lookahead_time", track_lookahead_time_, 0.0);
+    pnh_.param("track_search_dt", track_search_dt_, 0.02);
     pnh_.param("astar_resolution", astar_resolution_, 0.1);
     pnh_.param("static_map_enable", static_map_enabled_, true);
     pnh_.param("static_map_topic", static_map_topic_, std::string("/map"));
@@ -94,7 +106,9 @@ public:
     ap.chassis_height = chassis_h_;
     ap.resolution     = astar_resolution_;
     ap.safe_dist      = safe_dist_;
+    ap.hard_safe_dist = hard_safe_dist_;
     ap.static_safe_dist = static_map_safe_dist_;
+    ap.static_hard_safe_dist = static_map_safe_dist_;
     astar_.reset(new AStar3D(map_.get(), ap, static_map_.get()));
 
     BSplineParams bp;
@@ -107,6 +121,11 @@ public:
     bp.w_static_obs   = w_static_obs_;
     bp.w_dyn          = w_dyn_;
     bp.chassis_height = chassis_h_;
+    // Allow tuning smoother work budget from launch. Defaults bumped from
+    // (50, 0.20 s) so red-zone (low-ESDF) optimizations have enough budget
+    // to converge instead of returning empty/best-iterate paths.
+    pnh_.param("smoother_max_iter",  bp.max_iter,    120);
+    pnh_.param("smoother_max_time_s", bp.max_time_s, 0.30);
     smoother_.reset(new BSplineSmoother(map_.get(), bp, static_map_.get()));
 
     // ----------------- Pubs / subs -----------------
@@ -144,11 +163,13 @@ private:
 
   // Params
   std::string map_frame_, robot_frame_;
-  double chassis_h_, safe_dist_, v_max_, a_max_, arrival_radius_;
+  double chassis_h_, safe_dist_, hard_safe_dist_, v_max_, a_max_, arrival_radius_;
   double replan_rate_, tracker_rate_;
   double w_smooth_, w_obs_, w_dyn_;
   double blend_time_;
   double collision_d_min_;
+  double tracker_safe_dist_;
+  double track_kp_, track_lookahead_time_, track_search_dt_;
   double astar_resolution_;
   bool static_map_enabled_;
   std::string static_map_topic_;
@@ -169,6 +190,13 @@ private:
   ros::Time                  t_blend_start_;
   bool                       has_active_ = false;
   bool                       has_pending_ = false;
+
+  // Tracker debounce: number of consecutive unsafe-segment ticks. Trajectory
+  // is cleared only when this exceeds tracker_unsafe_ticks_to_clear_, so a
+  // single-frame map flicker (ghost briefly appearing on the path) does not
+  // drop the active plan.
+  int                        unsafe_consecutive_ = 0;
+  static constexpr int       tracker_unsafe_ticks_to_clear_ = 10;  // 100 ms @ 100 Hz
 
   // ----------------- Goal handling -----------------
   void goalCallback(const geometry_msgs::PointStamped::ConstPtr& msg) {
@@ -239,7 +267,9 @@ private:
             active_invalid = true;
             break;
           }
-          if (static_map_ && static_map_->isOccupied(Eigen::Vector2d(p.x(), p.y()))) {
+          if (static_map_ &&
+              static_map_->clearance(Eigen::Vector2d(p.x(), p.y()),
+                                     static_map_safe_dist_, nullptr) < static_map_safe_dist_) {
             need_replan = true;
             active_invalid = true;
             break;
@@ -279,16 +309,10 @@ private:
     // ---- Install as pending trajectory; tracker performs blending ----
     {
       std::lock_guard<std::mutex> lck(traj_mtx_);
-      if (has_active_ && !active_invalid) {
-        traj_pending_  = traj;
-        has_pending_   = true;
-        t_blend_start_ = ros::Time::now();
-      } else {
-        traj_active_     = traj;
-        has_active_      = true;
-        has_pending_     = false;
-        t_active_start_  = ros::Time::now();
-      }
+      traj_active_     = traj;
+      has_active_      = true;
+      has_pending_     = false;
+      t_active_start_  = ros::Time::now();
     }
 
     publishTrajectorySamples(traj);
@@ -324,30 +348,28 @@ private:
       std::lock_guard<std::mutex> lck(traj_mtx_);
       if (has_active_) {
         have_traj = true;
-        double t = (ros::Time::now() - t_active_start_).toSec();
-        if (t > traj_active_.tEnd()) t = traj_active_.tEnd() - 1e-3;
-        pos_des = traj_active_.pos(t);
-        vel_des = traj_active_.vel(t);
+        double t_nom = (ros::Time::now() - t_active_start_).toSec();
+        double t_end = traj_active_.tEnd();
+        if (t_nom > t_end) t_nom = t_end - 1e-3;
 
-        if (has_pending_) {
-          double a = (ros::Time::now() - t_blend_start_).toSec() / blend_time_;
-          if (a >= 1.0) {
-            traj_active_    = traj_pending_;
-            t_active_start_ = t_blend_start_;
-            has_pending_    = false;
-            t = (ros::Time::now() - t_active_start_).toSec();
-            if (t > traj_active_.tEnd()) t = traj_active_.tEnd() - 1e-3;
-            pos_des = traj_active_.pos(t);
-            vel_des = traj_active_.vel(t);
-          } else {
-            double t2 = (ros::Time::now() - t_blend_start_).toSec();
-            if (t2 > traj_pending_.tEnd()) t2 = traj_pending_.tEnd() - 1e-3;
-            Eigen::Vector3d p_pend = traj_pending_.pos(t2);
-            Eigen::Vector3d v_pend = traj_pending_.vel(t2);
-            pos_des = (1.0 - a) * pos_des + a * p_pend;
-            vel_des = (1.0 - a) * vel_des + a * v_pend;
-          }
+        // Strict path following: track the nearest point on the active
+        // trajectory, not a time-indexed point that may be several steps
+        // ahead when the robot lags. This removes pure-pursuit corner cuts.
+        double best_t = 0.0;
+        double best_d2 = std::numeric_limits<double>::infinity();
+        double dt = std::max(0.005, track_search_dt_);
+        for (double tt = 0.0; tt < t_end; tt += dt) {
+          Eigen::Vector3d p = traj_active_.pos(tt);
+          double d2 = (p.head<2>() - rs.p.head<2>()).squaredNorm();
+          if (d2 < best_d2) { best_d2 = d2; best_t = tt; }
         }
+        double end_d2 = (traj_active_.pos(t_end).head<2>() - rs.p.head<2>()).squaredNorm();
+        if (end_d2 < best_d2) best_t = t_end;
+
+        double t_ref = std::min(t_end - 1e-3,
+                                best_t + std::max(0.0, track_lookahead_time_));
+        pos_des = traj_active_.pos(t_ref);
+        vel_des = traj_active_.vel(t_ref);
       }
     }
 
@@ -373,12 +395,25 @@ private:
     }
 
     // Cross-track correction (small)
-    const double Kp = 1.0;
-    Eigen::Vector3d v_cmd = vel_des + Kp * (pos_des - rs.p);
+    Eigen::Vector3d v_cmd = vel_des + track_kp_ * (pos_des - rs.p);
 
     // Cap to v_max.
     double v_norm = v_cmd.head<2>().norm();
     if (v_norm > v_max_) v_cmd.head<2>() *= (v_max_ / v_norm);
+
+    if (!commandSegmentIsSafe(rs.p, v_cmd)) {
+      // Debounce: a single-frame map glitch (ghost flicker on the path)
+      // should not nuke the active trajectory. Only clear after several
+      // consecutive unsafe ticks.
+      if (++unsafe_consecutive_ >= tracker_unsafe_ticks_to_clear_) {
+        clearActiveTrajectory("tracker command segment unsafe");
+        unsafe_consecutive_ = 0;
+      }
+      cmd_vel_pub_.publish(cmd);
+      status_pub_.publish(arrived_msg);
+      return;
+    }
+    unsafe_consecutive_ = 0;
 
     // Transform into virtual_frame (rotation-only TF).
     geometry_msgs::TransformStamped T;
@@ -470,7 +505,9 @@ private:
 
     auto pointSafe = [&](const Eigen::Vector3d& p) {
       if (map_->dist(p) < collision_d_min_) return false;
-      if (static_map_ && static_map_->isOccupied(Eigen::Vector2d(p.x(), p.y()))) return false;
+      if (static_map_ &&
+          static_map_->clearance(Eigen::Vector2d(p.x(), p.y()),
+                                 static_map_safe_dist_, nullptr) < static_map_safe_dist_) return false;
       return true;
     };
     auto segmentSafe = [&](const Eigen::Vector3d& a, const Eigen::Vector3d& b) {
@@ -493,6 +530,34 @@ private:
       prev = cur;
     }
     if (!segmentSafe(prev, traj.pos(traj.tEnd()))) return false;
+    return true;
+  }
+
+  bool commandSegmentIsSafe(const Eigen::Vector3d& robot_pos,
+                            const Eigen::Vector3d& v_cmd) {
+    double speed = v_cmd.head<2>().norm();
+    if (speed < 1e-6) return true;
+
+    Eigen::Vector3d dir(v_cmd.x(), v_cmd.y(), 0.0);
+    dir.normalize();
+    double horizon = std::min(0.45, std::max(0.15, speed * 0.25));
+    int samples = std::max(1, static_cast<int>(std::ceil(horizon / 0.025)));
+
+    std::lock_guard<std::mutex> elck(map_->getEsdfMutex());
+    for (int i = 1; i <= samples; ++i) {
+      double s = horizon * static_cast<double>(i) / samples;
+      Eigen::Vector3d p = robot_pos + dir * s;
+      p.z() = chassis_h_;
+      // Use the relaxed live-tracker threshold (smaller than the planner's
+      // hard_safe_dist) so paths that nominally hug the planner margin do
+      // NOT get rejected on every tick. Real new obstacles still trip this.
+      if (map_->dist(p) < tracker_safe_dist_) return false;
+      if (static_map_ &&
+          static_map_->clearance(Eigen::Vector2d(p.x(), p.y()),
+                                 static_map_safe_dist_, nullptr) < static_map_safe_dist_) {
+        return false;
+      }
+    }
     return true;
   }
 };

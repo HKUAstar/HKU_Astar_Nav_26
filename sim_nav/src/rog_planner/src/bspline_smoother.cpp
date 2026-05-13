@@ -223,10 +223,88 @@ static bool lbfgs_optimize(int N, Eigen::VectorXd& x,
   return true;
 }
 
+// -------------------- Line-of-sight path pruning ---------------------------
+// Greedy simplification of the A* front-end output. The 8-connected A* on
+// a 0.1 m grid produces alternating diagonal/cardinal moves which, when
+// arc-length-sampled into B-spline control points, fight the smoothness
+// term and produce visible zigzag in /trajectory. We collapse runs of
+// LOS-feasible waypoints into straight segments; the optimizer then pulls
+// those segments taut against ESDF and static_map clearances.
+//
+// LOS check is ESDF-based (not isLineFree-on-inflated-occ): we sample the
+// candidate segment at 0.05 m and require ESDF >= shortcut_clear at every
+// sample, plus the static map check. ESDF-based is more permissive for
+// diagonal corner shortcuts than isLineFree against the 1-cell halo, which
+// is exactly the staircase pattern that produces the zigzag.
+static std::vector<Eigen::Vector3d> prunePath(
+    const std::vector<Eigen::Vector3d>& in,
+    SentryMap* map,
+    StaticMap2D* static_map,
+    double chassis_h,
+    double shortcut_clear,
+    double static_clear) {
+  if (in.size() <= 2) return in;
+
+  auto segmentOk = [&](const Eigen::Vector3d& p0,
+                       const Eigen::Vector3d& p1) -> bool {
+    Eigen::Vector3d d = p1 - p0;
+    double L = d.norm();
+    int steps = std::max(2, static_cast<int>(std::ceil(L / 0.05)));
+    for (int s = 0; s <= steps; ++s) {
+      double t = static_cast<double>(s) / steps;
+      Eigen::Vector3d ps = p0 + t * d;
+      ps.z() = chassis_h;
+      double esdf_d = 0.0;
+      try { esdf_d = map->dist(ps); } catch (...) { esdf_d = 0.0; }
+      if (esdf_d < shortcut_clear) return false;
+      if (static_map &&
+          static_map->isOccupied(Eigen::Vector2d(ps.x(), ps.y()))) {
+        return false;
+      }
+      // additional static_clear check via clearance() not done here; the
+      // smoother's static-map cost will pull the optimum away from walls.
+      (void)static_clear;
+    }
+    return true;
+  };
+
+  // Iterate the greedy shortcut to fixed point so chains of small staircase
+  // segments collapse over multiple passes.
+  std::vector<Eigen::Vector3d> cur = in;
+  for (int pass = 0; pass < 4; ++pass) {
+    std::vector<Eigen::Vector3d> out;
+    out.reserve(cur.size());
+    out.push_back(cur.front());
+    size_t anchor = 0;
+    while (anchor + 1 < cur.size()) {
+      size_t best = anchor + 1;
+      for (size_t j = cur.size() - 1; j > anchor + 1; --j) {
+        if (segmentOk(cur[anchor], cur[j])) { best = j; break; }
+      }
+      out.push_back(cur[best]);
+      anchor = best;
+    }
+    if (out.size() == cur.size()) { cur.swap(out); break; }
+    cur.swap(out);
+  }
+  return cur;
+}
+
 // -------------------- Public smooth() API ----------------------------------
-bool BSplineSmoother::smooth(const std::vector<Eigen::Vector3d>& front_path,
+bool BSplineSmoother::smooth(const std::vector<Eigen::Vector3d>& front_path_in,
                              BSplineTrajectory& out) {
-  if (front_path.size() < 2) return false;
+  if (front_path_in.size() < 2) return false;
+
+  // Prune A* output before B-spline initialization. This drastically reduces
+  // the number of control points and removes the 8-connected staircase that
+  // otherwise locks the smoother into a zigzag attractor.
+  // shortcut_clear is the ESDF threshold for accepting a straight shortcut;
+  // we set it slightly below safe_dist so the prune is permissive (the
+  // smoother's obstacle term still pulls the optimum back to safe_dist).
+  const double shortcut_clear = std::max(0.05, p_.safe_dist * 0.5);
+  std::vector<Eigen::Vector3d> front_path =
+      prunePath(front_path_in, map_, static_map_,
+                p_.chassis_height, shortcut_clear, p_.static_safe_dist);
 
   // Initialize control points by uniformly sampling the front-end path.
   // Need >= order+1 control points; aim for ~one CP per dt of motion at vmax.

@@ -7,9 +7,8 @@ Panels:
         - /Global Options1
         - /Robot1
         - /Phase 3 — rog_planner1
-        - /Phase 3 — rog_planner1/A* Path1
-        - /Phase 3 — rog_planner1/B-Spline Trajectory1
         - /Phase 3 — rog_planner1/ESDF (positive)1
+        - /Marker1
       Splitter Ratio: 0.5
     Tree Height: 439
   - Class: rviz/Selection
@@ -29,7 +28,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Planner Inf-Occ
+    SyncSource: ESDF (positive)
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -468,6 +467,14 @@ Visualization Manager:
           Value: false
       Enabled: true
       Name: Map & Sensors
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /cmd_vel_marker
+      Name: Marker
+      Namespaces:
+        cmd_vel: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -496,7 +503,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 14.911879539489746
+      Distance: 20.780555725097656
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -512,9 +519,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8847966194152832
+      Pitch: 1.3347969055175781
       Target Frame: <Fixed Frame>
-      Yaw: 3.914066791534424
+      Yaw: 3.5190672874450684
     Saved: ~
 Window Geometry:
   Displays:

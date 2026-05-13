@@ -28,13 +28,13 @@ namespace rog_planner {
 
 struct BSplineParams {
   int    order        = 3;
-  double dt           = 0.4;       // knot spacing (s)
+  double dt           = 0.6;       // knot spacing (s) — larger → fewer CPs → smoother curve
   double v_max        = 2.5;
   double a_max        = 4.0;
   double safe_dist    = 0.4;
   double static_safe_dist = 0.25;
-  double w_smooth     = 10.0;
-  double w_obs        = 10000.0;
+  double w_smooth     = 800.0;
+  double w_obs        = 3000.0;
   double w_static_obs = 50000.0;
   double w_dyn        = 100.0;
   double sample_dt    = 0.05;      // cost-eval sample step (s)

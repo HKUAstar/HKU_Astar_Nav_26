@@ -24,8 +24,10 @@ struct AStarParams {
   double chassis_height = 0.3;   // z-clamp (m)
   double resolution     = 0.2;   // step size; should match inflation_resolution
   double safe_dist      = 0.4;   // soft buffer; cells with esdf<safe_dist get penalized
+  double hard_safe_dist = 0.3;   // robot footprint buffer; cells closer than this are blocked
   double clearance_w    = 0.5;   // tiebreak weight on ESDF clearance
   double static_safe_dist = 0.25;
+  double static_hard_safe_dist = 0.25;
   double static_clearance_w = 0.5;
   double heuristic_w    = 1.001; // weighted A* (slightly inflated for speed)
   int    max_expansions = 20000;

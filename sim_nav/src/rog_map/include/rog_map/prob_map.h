@@ -25,6 +25,7 @@
 #pragma once
 
 #include <queue>
+#include <unordered_set>
 #include <rog_map/inf_map.h>
 #include <rog_map/free_cnt_map.h>
 #include <rog_map/esdf_map.h>
@@ -99,6 +100,13 @@ namespace rog_map {
 
         void updateProbMap(const PointCloud &cloud, const Pose &pose);
 
+        // Visibility-aware stale-occupied decay. After raycastProcess, each
+        // currently-OCCUPIED cell whose line-of-sight from the sensor is
+        // unobstructed by another occupied cell — and which received no
+        // current return — is issued an extra miss. Real obstacles get
+        // re-hit each frame and stay; ghosts decay in one frame.
+        void clearStaleOccupied(const Vec3f &cur_odom);
+
     protected:
         rog_map::Config cfg_;
         InfMap::Ptr inf_map_;
@@ -113,6 +121,12 @@ namespace rog_map {
             std::queue<Vec3i> update_cache_id_g;
             std::vector<uint16_t> operation_cnt;
             std::vector<uint16_t> hit_cnt;
+            // Per-cell counter of consecutive frames a currently-OCCUPIED
+            // cell has been unobserved (no operation). Used by the
+            // visibility-aware stale-occupied decay to avoid clearing
+            // real walls just because lidar density failed to hit them
+            // in a single frame.
+            std::vector<uint16_t> stale_frames_;
             Vec3f cache_box_max, cache_box_min, local_update_box_max, local_update_box_min;
             int batch_update_counter{0};
             std::mutex raycast_range_mtx;
@@ -121,6 +135,12 @@ namespace rog_map {
         vector<double> time_consuming_;
         vector<string> time_consuming_name_{"Total", "Raycast", "Update_cache", "Inflation", "PointCloudNumber",
                                             "CacheNumber", "InflationNumber"};
+
+        // Hash IDs of cells that are currently OCCUPIED. Maintained
+        // incrementally by hitPointUpdate / missPointUpdate / resetCell
+        // / resetLocalMap. Single-threaded access (cloud-cb thread only),
+        // so no mutex is required.
+        std::unordered_set<int> occupied_hash_set_;
 
         // standardization query
         // Known free < l_free
